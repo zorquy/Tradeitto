@@ -785,23 +785,33 @@ h1, h2, h3, h4 {
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
-  .section { padding: 72px 0; }
+  .section { padding: 64px 0; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 18px; }
   .footer-copy { white-space: normal; }
 
-  /* Hero: columna única, logo arriba */
+  /* Hero: columna única, logo arriba, todo centrado */
+  .hero-content { padding: 90px 0 56px; }
   .hero-layout {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
+    text-align: center;
   }
-  .hero-right {
-    order: -1;
-  }
+  .hero-left { align-items: center; }
+  .hero-badge { margin-left: auto; margin-right: auto; }
+  .hero-title { max-width: 100%; }
+  .hero-sub { max-width: 100%; margin-left: auto; margin-right: auto; }
+  .hero-buttons { justify-content: center; }
+  .hero-pills { justify-content: center; }
+  .hero-right { order: -1; }
   .hero-logo-img {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     animation: none;
   }
+
+  /* CTA */
+  .cta-section { padding: 72px 0; }
+
   /* Blobs más sutiles en mobile */
   .blob-cyan   { width: 280px; height: 280px; opacity: 0.045; }
   .blob-purple { width: 240px; height: 240px; opacity: 0.04; }
@@ -816,11 +826,19 @@ h1, h2, h3, h4 {
   .hero-buttons .btn-outline { width: 100%; }
   .about-layout { gap: 36px; }
   .footer-links { gap: 14px; }
+  .info-grid { margin-top: 36px; }
+  .organizers-grid { margin-top: 36px; }
+  .info-card-value { font-size: 1.25rem; }
 }
 @media (max-width: 480px) {
+  .section { padding: 52px 0; }
+  .hero-logo-img { width: 150px; height: 150px; }
   .hero-pills { gap: 6px; }
   .pill { font-size: 0.78rem; padding: 6px 12px; }
   .faq-question { font-size: 0.88rem; padding: 17px 18px; }
   .faq-answer-inner { padding: 0 18px 20px; }
   .container { padding: 0 18px; }
+  .info-card { padding: 24px 20px; }
+  .include-card { padding: 24px 20px; }
+  .organizer-card { padding: 24px 18px; }
 }
