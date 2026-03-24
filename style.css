@@ -163,6 +163,7 @@ h1, h2, h3, h4 {
   transition: color 0.2s var(--ease), background 0.2s var(--ease);
 }
 .nav-links a:hover { color: var(--accent); background: var(--accent-dim); }
+.nav-links a.active { color: var(--accent); font-weight: 600; }
 .nav-links .nav-cta {
   background: linear-gradient(135deg, #7b35c1 0%, #5a1fa0 100%);
   color: #fff;
