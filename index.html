@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -89,6 +89,35 @@
 
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ══ COUNTDOWN ══ -->
+  <section class="countdown-section" aria-label="Cuenta atrás para el evento">
+    <div class="container">
+      <p class="countdown-label">El evento empieza en</p>
+      <div class="countdown-blocks" id="countdownBlocks">
+        <div class="countdown-block">
+          <span class="countdown-num" id="cd-days">--</span>
+          <span class="countdown-unit">Días</span>
+        </div>
+        <span class="countdown-sep" aria-hidden="true">:</span>
+        <div class="countdown-block">
+          <span class="countdown-num" id="cd-hours">--</span>
+          <span class="countdown-unit">Horas</span>
+        </div>
+        <span class="countdown-sep" aria-hidden="true">:</span>
+        <div class="countdown-block">
+          <span class="countdown-num" id="cd-minutes">--</span>
+          <span class="countdown-unit">Minutos</span>
+        </div>
+        <span class="countdown-sep" aria-hidden="true">:</span>
+        <div class="countdown-block">
+          <span class="countdown-num" id="cd-seconds">--</span>
+          <span class="countdown-unit">Segundos</span>
+        </div>
+      </div>
+      <p class="countdown-started" id="countdownStarted" hidden>¡El evento ha comenzado! 🎉</p>
     </div>
   </section>
 
@@ -302,5 +331,62 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- COUNTDOWN JS -->
+  <script>
+  (function () {
+    // 6 de junio de 2026 a las 10:00 hora Madrid (CEST = UTC+2)
+    var TARGET = new Date('2026-06-06T08:00:00Z');
+
+    var elDays    = document.getElementById('cd-days');
+    var elHours   = document.getElementById('cd-hours');
+    var elMinutes = document.getElementById('cd-minutes');
+    var elSeconds = document.getElementById('cd-seconds');
+    var elBlocks  = document.getElementById('countdownBlocks');
+    var elStarted = document.getElementById('countdownStarted');
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function animateNum(el, newVal) {
+      if (el.textContent === newVal) return;
+      el.classList.remove('cd-flip-in', 'cd-flip-out');
+      el.classList.add('cd-flip-out');
+      setTimeout(function () {
+        el.textContent = newVal;
+        el.classList.remove('cd-flip-out');
+        void el.offsetWidth; // force reflow
+        el.classList.add('cd-flip-in');
+        el.addEventListener('animationend', function () {
+          el.classList.remove('cd-flip-in');
+        }, { once: true });
+      }, 150);
+    }
+
+    function tick() {
+      var diff = TARGET.getTime() - Date.now();
+
+      if (diff <= 0) {
+        elBlocks.style.display = 'none';
+        elStarted.removeAttribute('hidden');
+        clearInterval(timer);
+        return;
+      }
+
+      var total = Math.floor(diff / 1000);
+      var d = Math.floor(total / 86400);
+      var h = Math.floor((total % 86400) / 3600);
+      var m = Math.floor((total % 3600) / 60);
+      var s = total % 60;
+
+      animateNum(elDays,    pad(d));
+      animateNum(elHours,   pad(h));
+      animateNum(elMinutes, pad(m));
+      animateNum(elSeconds, pad(s));
+    }
+
+    tick();
+    var timer = setInterval(tick, 1000);
+  })();
+  </script>
 </body>
 </html>
