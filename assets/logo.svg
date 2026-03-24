@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6BC5C8"/>
+      <stop offset="40%" stop-color="#C8C86E"/>
+      <stop offset="70%" stop-color="#B085C8"/>
+      <stop offset="100%" stop-color="#5BB8C4"/>
+    </radialGradient>
+    <radialGradient id="goldRing" cx="50%" cy="50%" r="50%">
+      <stop offset="80%" stop-color="#D4AF37"/>
+      <stop offset="90%" stop-color="#F0D060"/>
+      <stop offset="100%" stop-color="#B8860B"/>
+    </radialGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C4A8F0"/>
+      <stop offset="50%" stop-color="#9B72CF"/>
+      <stop offset="100%" stop-color="#7C4DCC"/>
+    </linearGradient>
+    <clipPath id="circle">
+      <circle cx="200" cy="200" r="175"/>
+    </clipPath>
+  </defs>
+
+  <!-- Outer gold ring -->
+  <circle cx="200" cy="200" r="195" fill="#B8860B"/>
+  <circle cx="200" cy="200" r="190" fill="#F0D060"/>
+  <circle cx="200" cy="200" r="185" fill="#D4AF37"/>
+
+  <!-- Background globe fill -->
+  <circle cx="200" cy="200" r="175" fill="url(#bgGrad)"/>
+
+  <!-- Ditto shapes (simplified) -->
+  <g clip-path="url(#circle)" opacity="0.6">
+    <ellipse cx="100" cy="100" rx="55" ry="50" fill="#9B72CF" transform="rotate(-15 100 100)"/>
+    <ellipse cx="300" cy="80" rx="50" ry="45" fill="#5BB8C4" transform="rotate(10 300 80)"/>
+    <ellipse cx="80" cy="280" rx="60" ry="45" fill="#C8C86E" transform="rotate(-10 80 280)"/>
+    <ellipse cx="320" cy="300" rx="55" ry="50" fill="#9B72CF" transform="rotate(20 320 300)"/>
+    <ellipse cx="200" cy="320" rx="65" ry="40" fill="#5BB8C4" transform="rotate(-5 200 320)"/>
+    <ellipse cx="160" cy="140" rx="40" ry="35" fill="#C8C86E"/>
+    <ellipse cx="260" cy="180" rx="45" ry="38" fill="#B085C8"/>
+  </g>
+
+  <!-- Inner holographic border -->
+  <circle cx="200" cy="200" r="175" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3"/>
+  <circle cx="200" cy="200" r="170" fill="none" stroke="rgba(212,175,55,0.5)" stroke-width="1.5"/>
+
+  <!-- Text background pill -->
+  <rect x="75" y="190" width="250" height="65" rx="32" fill="white"/>
+  <rect x="77" y="192" width="246" height="61" rx="30" fill="white" stroke="#7C4DCC" stroke-width="2"/>
+
+  <!-- TRADEITTO text -->
+  <text x="200" y="235" font-family="Arial Black, sans-serif" font-size="40" font-weight="900"
+        fill="url(#textGrad)" text-anchor="middle" dominant-baseline="middle"
+        stroke="#4A2D8A" stroke-width="1">Tradeitto</text>
+
+  <!-- Arc text top: INTERCAMBIA, JUEGA Y CONECTA -->
+  <path id="topArc" d="M 40,200 A 160,160 0 0,1 360,200" fill="none"/>
+  <text font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#4A2D8A" letter-spacing="3">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">INTERCAMBIA, JUEGA Y CONECTA</textPath>
+  </text>
+
+  <!-- Arc text bottom: EVENTO DE TCG -->
+  <path id="botArc" d="M 55,210 A 150,150 0 0,0 345,210" fill="none"/>
+  <text font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#4A2D8A" letter-spacing="4">
+    <textPath href="#botArc" startOffset="50%" text-anchor="middle">EVENTO DE TCG</textPath>
+  </text>
+</svg>
