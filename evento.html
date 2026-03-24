@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tradeitto | El evento</title>
+  <link rel="icon" href="assets/TRADEITTO LOGO.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" id="navbar">
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="Tradeitto inicio">
+        <img src="assets/TRADEITTO LOGO.png" alt="Logo de Tradeitto" />
+        <span>Tradeitto</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Principal">
+        <a href="evento.html" class="is-active">Evento</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="entradas.html">Entradas</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <a href="https://www.eventbrite.com/" class="btn btn-primary desktop-cta" target="_blank" rel="noreferrer">Comprar entrada</a>
+      <button class="menu-toggle" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="evento.html">Evento</a>
+      <a href="comunidad.html">Comunidad</a>
+      <a href="entradas.html">Entradas</a>
+      <a href="faq.html">FAQ</a>
+      <a href="https://www.eventbrite.com/" target="_blank" rel="noreferrer">Comprar entrada</a>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="page-hero">
+      <div class="container narrow reveal">
+        <span class="eyebrow">El evento</span>
+        <h1>Tradeitto nace para que la comunidad TCG de Bilbao tenga un encuentro con personalidad propia.</h1>
+        <p>
+          El sabado 6 de junio de 2026 nos reuniremos en Gran Hotel Bilbao para una jornada enfocada en
+          intercambio, juego y comunidad. Aun con foco principal en Pokemon TCG, el evento esta abierto a
+          cualquier TCG y a perfiles muy diferentes: gente que colecciona, juega, intercambia o simplemente quiere conectar.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card-grid three-up">
+        <article class="content-card reveal">
+          <h3>Intercambio con calma</h3>
+          <p>Un espacio pensado para hablar, revisar carpetas, comparar cartas y cerrar cambios con buen ambiente y sin prisas.</p>
+        </article>
+        <article class="content-card reveal">
+          <h3>Juego y actividad</h3>
+          <p>La idea no es solo mirar cartas: queremos un entorno vivo, con mesas, conversaciones y ganas de compartir hobby.</p>
+        </article>
+        <article class="content-card reveal">
+          <h3>Comunidad visible</h3>
+          <p>Tradeitto quiere ser un punto de encuentro real para la escena local, no una cita puntual sin continuidad.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section alt-section">
+      <div class="container split-panel">
+        <div class="content-card reveal">
+          <span class="mini-label">Datos clave</span>
+          <ul class="plain-list dark-list">
+            <li><span>Fecha</span><strong>6 de junio de 2026</strong></li>
+            <li><span>Ubicacion</span><strong>Gran Hotel Bilbao</strong></li>
+            <li><span>Formato</span><strong>Evento abierto a cualquier TCG</strong></li>
+            <li><span>Especial foco</span><strong>Pokemon TCG</strong></li>
+          </ul>
+        </div>
+        <div class="content-card reveal">
+          <span class="mini-label">Que puedes esperar</span>
+          <p>
+            Una jornada pensada para que te sientas dentro desde el primer momento: ambiente amable,
+            comunidad accesible, espacio para ver cartas y jugar, y una organizacion que apuesta por la experiencia
+            tanto como por el contenido del evento.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer">
+      <div>
+        <p class="footer-brand">Tradeitto</p>
+        <p class="footer-copy">6 de junio de 2026 · Gran Hotel Bilbao.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="entradas.html">Entradas</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

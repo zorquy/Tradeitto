@@ -3,382 +3,150 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tradeitto – Evento de TCG en Bilbao</title>
-  <meta name="description" content="Tradeitto: el primer gran evento de intercambio de cartas TCG en Bilbao. Intercambia, juega y conecta. Entradas a 10€." />
-  <link rel="icon" href="assets/logo.png" type="image/png" />
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="style.css" />
+  <title>Tradeitto | Evento TCG en Bilbao</title>
+  <meta
+    name="description"
+    content="Tradeitto llega el 6 de junio de 2026 a Gran Hotel Bilbao. Un evento para intercambiar, jugar y conectar alrededor del TCG, con foco especial en Pokemon."
+  />
+  <link rel="icon" href="assets/TRADEITTO LOGO.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lilita+One&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- ===================== NAV ===================== -->
-  <header class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="#inicio" class="nav-logo">
-        <img src="assets/logo.png" alt="Tradeitto logo" onerror="this.src='assets/logo.svg'" />
+  <div class="page-wash" aria-hidden="true"></div>
+  <header class="site-header" id="navbar">
+    <div class="container nav simple-nav">
+      <a href="#inicio" class="brand" aria-label="Tradeitto inicio">
+        <img src="assets/TRADEITTO LOGO.png" alt="Logo de Tradeitto" />
         <span>Tradeitto</span>
       </a>
-      <nav class="nav-links">
-        <a href="#sobre-el-evento">El Evento</a>
-        <a href="#quienes-somos">Quiénes Somos</a>
-        <a href="#entradas">Entradas</a>
-        <a href="#faq">FAQ</a>
-        <a href="#entradas" class="btn-nav">Comprar Entrada</a>
+
+      <nav class="desktop-nav" aria-label="Principal">
+        <a href="#evento">Evento</a>
+        <a href="faq.html">FAQ</a>
+        <a href="#organiza">Organiza</a>
+        <a href="https://instagram.com/tradeitto" target="_blank" rel="noreferrer">Instagram</a>
       </nav>
-      <button class="hamburger" id="hamburger" aria-label="Menú">
-        <span></span><span></span><span></span>
+
+      <a href="https://www.eventbrite.com/" class="btn btn-primary desktop-cta" target="_blank" rel="noreferrer">Comprar entradas</a>
+
+      <button class="menu-toggle" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
+
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#sobre-el-evento">El Evento</a>
-      <a href="#quienes-somos">Quiénes Somos</a>
-      <a href="#entradas">Entradas</a>
-      <a href="#faq">FAQ</a>
-      <a href="#entradas" class="btn-nav">Comprar Entrada</a>
+      <a href="#evento">Evento</a>
+      <a href="faq.html">FAQ</a>
+      <a href="#organiza">Organiza</a>
+      <a href="https://instagram.com/tradeitto" target="_blank" rel="noreferrer">Instagram</a>
+      <a href="https://www.eventbrite.com/" target="_blank" rel="noreferrer">Comprar entradas</a>
     </div>
   </header>
 
-  <!-- ===================== HERO ===================== -->
-  <section class="hero" id="inicio">
-    <div class="hero-bg">
-      <div class="blob blob-1"></div>
-      <div class="blob blob-2"></div>
-      <div class="blob blob-3"></div>
-      <div class="ditto-pattern"></div>
-    </div>
-    <div class="hero-content">
-      <img src="assets/logo.png" alt="Tradeitto" class="hero-logo" onerror="this.src='assets/logo.svg'" />
-      <h1 class="hero-title">El primer evento de TCG en Bilbao</h1>
-      <p class="hero-sub">Intercambia · Juega · Conecta</p>
-      <p class="hero-location">
-        <span class="icon">📍</span> Bilbao &nbsp;|&nbsp; <span class="icon">📅</span> Próximamente
-      </p>
-      <div class="hero-cta">
-        <a href="#entradas" class="btn-primary">Consigue tu entrada</a>
-        <a href="#sobre-el-evento" class="btn-secondary">Saber más</a>
-      </div>
-    </div>
-    <div class="hero-scroll-hint">
-      <span></span>
-    </div>
-  </section>
-
-  <!-- ===================== SOBRE EL EVENTO ===================== -->
-  <section class="section sobre-evento" id="sobre-el-evento">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">El Evento</span>
-        <h2>¿Qué es Tradeitto?</h2>
-        <p class="section-desc">Un espacio único dedicado a los amantes del TCG, especialmente Pokémon, donde la comunidad es lo primero.</p>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🔄</div>
-          <h3>Intercambia</h3>
-          <p>Trae tus cartas y encuentra el intercambio perfecto. Un mercadillo de cartas donde todos ganan.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🎮</div>
-          <h3>Juega</h3>
-          <p>Partidas amistosas, torneos y actividades para todos los niveles, desde principiantes hasta veteranos.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🤝</div>
-          <h3>Conecta</h3>
-          <p>Conoce a gente que comparte tu pasión. Haz amigos, forma comunidad y crea recuerdos únicos.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🛡️</div>
-          <h3>Espacio Seguro</h3>
-          <p>Un ambiente inclusivo y respetuoso donde todo el mundo es bienvenido, sin importar tu experiencia.</p>
-        </div>
-      </div>
-
-      <div class="event-highlight">
-        <div class="highlight-text">
-          <h3>La primera vez en Bilbao</h3>
-          <p>
-            Bilbao por fin tiene su propio evento de TCG. Tradeitto nace de la pasión de la comunidad, para la comunidad.
-            Un nombre que mezcla <em>Trade</em> (intercambio) y <em>Ditto</em>, el Pokémon que puede ser cualquier cosa...
-            igual que nuestro evento, que se adapta a ti.
+  <main id="inicio">
+    <section class="hero hero-minimal">
+      <div class="hero-glow hero-glow-a"></div>
+      <div class="hero-glow hero-glow-b"></div>
+      <div class="container hero-single">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">6 de junio de 2026 · Gran Hotel Bilbao</span>
+          <h1>Intercambia, juega y conecta.</h1>
+          <p class="hero-short">
+            Un evento TCG en Bilbao abierto a cualquier juego, con foco especial en Pokemon.
           </p>
-          <p>
-            Ya era hora de que Bilbao tuviera un espacio así. Y aquí estamos.
-          </p>
+
+          <div class="hero-actions">
+            <a href="https://www.eventbrite.com/" class="btn btn-primary" target="_blank" rel="noreferrer">Comprar entradas</a>
+            <a href="https://instagram.com/tradeitto" class="btn btn-secondary" target="_blank" rel="noreferrer">Ver Instagram</a>
+          </div>
         </div>
-        <div class="highlight-visual">
-          <div class="pokeball-deco"></div>
+
+        <div class="hero-logo-panel reveal">
+          <img src="assets/TRADEITTO LOGO.png" alt="Logo de Tradeitto" class="hero-logo-large" />
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===================== QUIÉNES SOMOS ===================== -->
-  <section class="section quienes-somos" id="quienes-somos">
-    <div class="container">
-      <div class="section-header light">
-        <span class="section-tag">Quiénes Somos</span>
-        <h2>Detrás de Tradeitto</h2>
-        <p class="section-desc">Somos un grupo de apasionados del TCG de Bilbao que querían algo más que jugar solos.</p>
-      </div>
+    <section class="section quick-section" id="evento">
+      <div class="container">
+        <div class="quick-grid">
+          <article class="quick-card reveal">
+            <span class="card-number">Cuando</span>
+            <h2>6 Junio</h2>
+            <p>Una jornada para disfrutar del TCG en comunidad.</p>
+          </article>
 
-      <div class="about-content">
-        <div class="about-card">
-          <div class="about-icon">💜</div>
-          <h3>Nuestra misión</h3>
-          <p>
-            Crear un espacio donde la comunidad TCG de Bilbao y alrededores pueda reunirse, intercambiar cartas
-            de forma segura y justa, y sobre todo, pasarlo bien. Sin elitismos, sin dramas, con respeto.
-          </p>
-        </div>
-        <div class="about-card">
-          <div class="about-icon">🌍</div>
-          <h3>Comunidad ante todo</h3>
-          <p>
-            Creemos que los mejores momentos del TCG no son solo las victorias, sino las historias que se crean
-            alrededor de las cartas. Queremos que Tradeitto sea ese punto de encuentro que echábamos de menos.
-          </p>
-        </div>
-        <div class="about-card">
-          <div class="about-icon">✨</div>
-          <h3>Ambiente seguro</h3>
-          <p>
-            Tenemos tolerancia cero con cualquier actitud irrespetuosa. Aquí todo el mundo merece sentirse
-            bienvenido: novatos, veteranos, peques y mayores. Tradeitto es para todos.
-          </p>
+          <article class="quick-card reveal">
+            <span class="card-number">Donde</span>
+            <h2>Gran Hotel Bilbao</h2>
+            <p>Un punto de encuentro comodo, centrico y facil para reunirse.</p>
+          </article>
+
+          <article class="quick-card reveal">
+            <span class="card-number">Entrada</span>
+            <h2>10 EUR</h2>
+            <p>Incluye 2 sobres de Pokemon y numero para sorteo presencial.</p>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===================== ENTRADAS ===================== -->
-  <section class="section entradas" id="entradas">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Entradas</span>
-        <h2>Consigue tu sitio</h2>
-        <p class="section-desc">Las plazas son limitadas. No te quedes sin la tuya.</p>
-      </div>
-
-      <div class="ticket-wrapper">
-        <div class="ticket-card">
-          <div class="ticket-top">
-            <div class="ticket-badge">Entrada General</div>
-            <div class="ticket-price">
-              <span class="price-amount">10€</span>
-              <span class="price-label">por persona</span>
-            </div>
-          </div>
-          <div class="ticket-divider">
-            <div class="ticket-hole left"></div>
-            <div class="ticket-line"></div>
-            <div class="ticket-hole right"></div>
-          </div>
-          <div class="ticket-bottom">
-            <ul class="ticket-includes">
-              <li>
-                <span class="check">✓</span>
-                <span>Acceso completo al evento</span>
-              </li>
-              <li>
-                <span class="check">✓</span>
-                <span><strong>2 sobres de Pokémon</strong> incluidos</span>
-              </li>
-              <li>
-                <span class="check">✓</span>
-                <span>Número <strong>exclusivo para el sorteo presencial</strong></span>
-              </li>
-              <li>
-                <span class="check">✓</span>
-                <span>Acceso a intercambios, partidas y actividades</span>
-              </li>
-              <li>
-                <span class="check">✓</span>
-                <span>Formar parte de la comunidad Tradeitto</span>
-              </li>
-            </ul>
-            <!-- ▼ Cuando tengas el enlace de Eventbrite, cambia href="#" por tu URL ▼ -->
-            <a href="#" class="btn-ticket" id="buy-ticket-btn">Comprar Entrada</a>
-            <p class="ticket-note">Entradas numeradas · Sorteo presencial el día del evento</p>
-          </div>
+    <section class="section focus-section">
+      <div class="container focus-panel reveal">
+        <div>
+          <span class="eyebrow light-pill">De que va</span>
+          <h2>Un evento sencillo: venir, ver cartas, jugar y pasarlo bien.</h2>
         </div>
-
-        <div class="ticket-info">
-          <div class="info-item">
-            <span class="info-icon">🎟️</span>
-            <div>
-              <strong>Entradas numeradas</strong>
-              <p>Cada entrada lleva un número único que participa automáticamente en el sorteo presencial del evento.</p>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-icon">🎁</span>
-            <div>
-              <strong>2 sobres incluidos</strong>
-              <p>Al recoger tu entrada el día del evento recibirás 2 sobres de cartas Pokémon.</p>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-icon">🏆</span>
-            <div>
-              <strong>Sorteo exclusivo</strong>
-              <p>El sorteo se realiza en directo durante el evento. ¡Tienes que estar presente para ganar!</p>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-icon">📍</span>
-            <div>
-              <strong>Bilbao</strong>
-              <p>Próximamente anunciaremos la ubicación exacta y la fecha. Síguenos para no perderte nada.</p>
-            </div>
-          </div>
+        <div class="focus-tags">
+          <span>Intercambio</span>
+          <span>Juego</span>
+          <span>Comunidad</span>
+          <span>Pokemon</span>
+          <span>Cualquier TCG</span>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===================== FAQ ===================== -->
-  <section class="section faq" id="faq">
-    <div class="container">
-      <div class="section-header light">
-        <span class="section-tag">FAQ</span>
-        <h2>Preguntas frecuentes</h2>
-        <p class="section-desc">Todo lo que necesitas saber antes de venir.</p>
+    <section class="section organizer-section" id="organiza">
+      <div class="container organizer-panel reveal">
+        <span class="card-number">Organiza</span>
+        <h2>Srta.Eevee, Pingucollects y la tienda Eeveecards.</h2>
+        <p>
+          Tradeitto nace desde la comunidad para crear un evento visual, cercano y facil de disfrutar.
+        </p>
       </div>
+    </section>
 
-      <div class="faq-list">
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>¿Necesito experiencia previa en TCG para venir?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Para nada. Tradeitto es para todo el mundo, desde los que acaban de descubrir las cartas hasta los más expertos. Si eres nuevo, es el sitio perfecto para aprender y conocer gente que te guíe.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>¿Qué cartas puedo traer?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>El evento está centrado en Pokémon TCG, pero puedes traer cartas de cualquier juego de cartas coleccionables. Cuantas más cartas traigas, más posibilidades de encontrar el intercambio perfecto.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>¿Cómo funciona el sorteo?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Cada entrada tiene un número único. El sorteo se celebra en directo durante el evento, por lo que debes estar presente para poder ganar. Los premios se anunciarán próximamente.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>¿Los 2 sobres son de Pokémon TCG?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Sí, los 2 sobres incluidos con la entrada son de Pokémon TCG. Los recogerás al llegar al evento.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>¿Se puede venir sin comprar entrada?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Las entradas son necesarias para acceder al evento. Además, con la entrada llevas los sobres y el número de sorteo, así que merece la pena. Las plazas son limitadas, así que no esperes demasiado.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>¿El evento es apto para niños?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Sí, totalmente. Tradeitto es un espacio familiar y seguro. Los menores deben venir acompañados de un adulto responsable.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>¿Habrá zona de juego libre?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Sí, además de la zona de intercambios habrá mesas disponibles para partidas amistosas. ¡Trae tu mazo!</p>
-          </div>
-        </div>
-
+    <section class="section cta-section">
+      <div class="container cta-panel reveal">
+        <h2>Hazte con tu entrada.</h2>
+        <p>Nos vemos el 6 de junio en Bilbao.</p>
+        <a href="https://www.eventbrite.com/" class="btn btn-primary cta-big" target="_blank" rel="noreferrer">Comprar entradas ahora</a>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <img src="assets/logo.png" alt="Tradeitto" onerror="this.src='assets/logo.svg'" />
-          <p>Intercambia, Juega y Conecta</p>
-          <p class="footer-small">El primer evento de TCG de Bilbao</p>
-        </div>
-        <div class="footer-links">
-          <h4>Navegación</h4>
-          <a href="#sobre-el-evento">El Evento</a>
-          <a href="#quienes-somos">Quiénes Somos</a>
-          <a href="#entradas">Entradas</a>
-          <a href="#faq">FAQ</a>
-        </div>
-        <div class="footer-social">
-          <h4>Síguenos</h4>
-          <!-- ▼ Sustituye # por tus URLs de redes cuando las tengas ▼ -->
-          <div class="social-links">
-            <a href="#" class="social-btn" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              Instagram
-            </a>
-            <a href="#" class="social-btn" aria-label="TikTok">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.84 4.84 0 01-1.01-.06z"/></svg>
-              TikTok
-            </a>
-            <a href="#" class="social-btn" aria-label="Twitter / X">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              X / Twitter
-            </a>
-          </div>
-        </div>
+  <footer class="site-footer">
+    <div class="container footer">
+      <div>
+        <p class="footer-brand">Tradeitto</p>
+        <p class="footer-copy">Evento de TCG en Bilbao.</p>
       </div>
-      <div class="footer-bottom">
-        <p>© 2025 Tradeitto · Bilbao · Hecho con 💜 por la comunidad TCG</p>
-        <p class="footer-disclaimer">Tradeitto no está afiliado con Nintendo, The Pokémon Company ni ninguna marca de TCG.</p>
+      <div class="footer-links">
+        <a href="faq.html">FAQ</a>
+        <a href="https://instagram.com/tradeitto" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://www.eventbrite.com/" target="_blank" rel="noreferrer">Entradas</a>
       </div>
     </div>
   </footer>
-
-  <!-- ===================== MODAL PRÓXIMAMENTE ===================== -->
-  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal">
-      <button class="modal-close" id="modalClose" aria-label="Cerrar">✕</button>
-      <div class="modal-icon">🎟️</div>
-      <h3 id="modalTitle">Entradas próximamente</h3>
-      <p>Estamos ultimando los detalles del evento. Las entradas saldrán a la venta muy pronto.</p>
-      <p class="modal-price-reminder">Recuerda: <strong>10€</strong> · 2 sobres Pokémon + número de sorteo</p>
-      <a href="#faq" class="btn-modal-link" id="modalFaqLink">Ver preguntas frecuentes</a>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>

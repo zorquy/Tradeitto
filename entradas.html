@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tradeitto | Entradas</title>
+  <link rel="icon" href="assets/TRADEITTO LOGO.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" id="navbar">
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="Tradeitto inicio">
+        <img src="assets/TRADEITTO LOGO.png" alt="Logo de Tradeitto" />
+        <span>Tradeitto</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Principal">
+        <a href="evento.html">Evento</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="entradas.html" class="is-active">Entradas</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <a href="https://www.eventbrite.com/" class="btn btn-primary desktop-cta" target="_blank" rel="noreferrer">Comprar entrada</a>
+      <button class="menu-toggle" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="evento.html">Evento</a>
+      <a href="comunidad.html">Comunidad</a>
+      <a href="entradas.html">Entradas</a>
+      <a href="faq.html">FAQ</a>
+      <a href="https://www.eventbrite.com/" target="_blank" rel="noreferrer">Comprar entrada</a>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="page-hero">
+      <div class="container narrow reveal">
+        <span class="eyebrow">Entradas</span>
+        <h1>Una entrada clara y pensada para que vivas el evento desde el minuto uno.</h1>
+        <p>
+          La entrada general cuesta 10 EUR e incluye acceso completo al evento, dos sobres de Pokemon
+          y un numero exclusivo para el sorteo presencial que se celebrara durante la jornada.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container ticket-layout">
+        <div class="content-card reveal">
+          <span class="mini-label">Que incluye</span>
+          <ul class="plain-list dark-list">
+            <li><span>Acceso</span><strong>Entrada general al evento</strong></li>
+            <li><span>Extra incluido</span><strong>2 sobres de Pokemon</strong></li>
+            <li><span>Sorteo</span><strong>Numero unico presencial</strong></li>
+            <li><span>Experiencia</span><strong>Zona de intercambio y juego</strong></li>
+          </ul>
+        </div>
+
+        <div class="ticket-panel reveal">
+          <p class="mini-label">Entrada general</p>
+          <div class="price-row">
+            <strong>10</strong>
+            <span>EUR</span>
+          </div>
+          <p class="ticket-copy">Compra tu plaza a traves de Eventbrite y asegurate sitio para el 6 de junio de 2026.</p>
+          <a href="https://www.eventbrite.com/" class="btn btn-primary wide-btn" target="_blank" rel="noreferrer">Comprar en Eventbrite</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer">
+      <div>
+        <p class="footer-brand">Tradeitto</p>
+        <p class="footer-copy">Entradas simples, claras y listas para cliente.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="evento.html">Evento</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
