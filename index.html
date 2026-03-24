@@ -6,7 +6,6 @@
   <title>Tradeitto – Evento de TCG en Bilbao</title>
   <meta name="description" content="Tradeitto: el primer gran evento de intercambio de cartas TCG en Bilbao. Intercambia, juega y conecta. Entradas a 10€." />
   <link rel="icon" href="assets/logo.png" type="image/png" />
-  <!-- Fallback icon if PNG not yet placed -->
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,6 +25,7 @@
         <a href="#sobre-el-evento">El Evento</a>
         <a href="#quienes-somos">Quiénes Somos</a>
         <a href="#entradas">Entradas</a>
+        <a href="#faq">FAQ</a>
         <a href="#entradas" class="btn-nav">Comprar Entrada</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Menú">
@@ -36,6 +36,7 @@
       <a href="#sobre-el-evento">El Evento</a>
       <a href="#quienes-somos">Quiénes Somos</a>
       <a href="#entradas">Entradas</a>
+      <a href="#faq">FAQ</a>
       <a href="#entradas" class="btn-nav">Comprar Entrada</a>
     </div>
   </header>
@@ -200,6 +201,7 @@
                 <span>Formar parte de la comunidad Tradeitto</span>
               </li>
             </ul>
+            <!-- ▼ Cuando tengas el enlace de Eventbrite, cambia href="#" por tu URL ▼ -->
             <a href="#" class="btn-ticket" id="buy-ticket-btn">Comprar Entrada</a>
             <p class="ticket-note">Entradas numeradas · Sorteo presencial el día del evento</p>
           </div>
@@ -239,6 +241,91 @@
     </div>
   </section>
 
+  <!-- ===================== FAQ ===================== -->
+  <section class="section faq" id="faq">
+    <div class="container">
+      <div class="section-header light">
+        <span class="section-tag">FAQ</span>
+        <h2>Preguntas frecuentes</h2>
+        <p class="section-desc">Todo lo que necesitas saber antes de venir.</p>
+      </div>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿Necesito experiencia previa en TCG para venir?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Para nada. Tradeitto es para todo el mundo, desde los que acaban de descubrir las cartas hasta los más expertos. Si eres nuevo, es el sitio perfecto para aprender y conocer gente que te guíe.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿Qué cartas puedo traer?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>El evento está centrado en Pokémon TCG, pero puedes traer cartas de cualquier juego de cartas coleccionables. Cuantas más cartas traigas, más posibilidades de encontrar el intercambio perfecto.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿Cómo funciona el sorteo?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Cada entrada tiene un número único. El sorteo se celebra en directo durante el evento, por lo que debes estar presente para poder ganar. Los premios se anunciarán próximamente.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿Los 2 sobres son de Pokémon TCG?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Sí, los 2 sobres incluidos con la entrada son de Pokémon TCG. Los recogerás al llegar al evento.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿Se puede venir sin comprar entrada?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Las entradas son necesarias para acceder al evento. Además, con la entrada llevas los sobres y el número de sorteo, así que merece la pena. Las plazas son limitadas, así que no esperes demasiado.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿El evento es apto para niños?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Sí, totalmente. Tradeitto es un espacio familiar y seguro. Los menores deben venir acompañados de un adulto responsable.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿Habrá zona de juego libre?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Sí, además de la zona de intercambios habrá mesas disponibles para partidas amistosas. ¡Trae tu mazo!</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
     <div class="container">
@@ -253,11 +340,25 @@
           <a href="#sobre-el-evento">El Evento</a>
           <a href="#quienes-somos">Quiénes Somos</a>
           <a href="#entradas">Entradas</a>
+          <a href="#faq">FAQ</a>
         </div>
-        <div class="footer-contact">
+        <div class="footer-social">
           <h4>Síguenos</h4>
-          <p>Próximamente en redes sociales.</p>
-          <p class="footer-small">¿Tienes alguna pregunta?<br/>Escríbenos y te respondemos.</p>
+          <!-- ▼ Sustituye # por tus URLs de redes cuando las tengas ▼ -->
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              Instagram
+            </a>
+            <a href="#" class="social-btn" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.84 4.84 0 01-1.01-.06z"/></svg>
+              TikTok
+            </a>
+            <a href="#" class="social-btn" aria-label="Twitter / X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              X / Twitter
+            </a>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">
@@ -266,6 +367,18 @@
       </div>
     </div>
   </footer>
+
+  <!-- ===================== MODAL PRÓXIMAMENTE ===================== -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Cerrar">✕</button>
+      <div class="modal-icon">🎟️</div>
+      <h3 id="modalTitle">Entradas próximamente</h3>
+      <p>Estamos ultimando los detalles del evento. Las entradas saldrán a la venta muy pronto.</p>
+      <p class="modal-price-reminder">Recuerda: <strong>10€</strong> · 2 sobres Pokémon + número de sorteo</p>
+      <a href="#faq" class="btn-modal-link" id="modalFaqLink">Ver preguntas frecuentes</a>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
