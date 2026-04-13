@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tradeitto — Evento TCG en Bilbao · 7 de junio de 2026</title>
+  <meta name="description" content="Tradeitto es el primer evento TCG de Bilbao: intercambia, juega y conecta con la comunidad. Entrada 10€ con 2 sobres de Pokémon incluidos." />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        Tradeitto
+      </a>
+      <nav class="nav-links">
+        <a href="#info">Evento</a>
+        <a href="programa.html">Programa</a>
+        <a href="faq.html">FAQ</a>
+        <a href="https://instagram.com/tradeitto" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.eventbrite.com/" target="_blank" rel="noopener" class="nav-cta">Comprar entradas</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#info">Evento</a>
+      <a href="programa.html">Programa</a>
+      <a href="faq.html">FAQ</a>
+      <a href="https://instagram.com/tradeitto" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.eventbrite.com/" target="_blank" rel="noopener" class="nav-cta">Comprar entradas</a>
+    </nav>
+  </header>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero" id="inicio">
+    <div class="hero-grid"></div>
+    <div class="hero-blob-organic blob-cyan"></div>
+    <div class="hero-blob-organic blob-purple"></div>
+    <div class="hero-blob-organic blob-gold"></div>
+    <div class="hero-content">
+      <div class="container">
+        <div class="hero-layout">
+
+          <div class="hero-left">
+            <span class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              7 de junio · Bilbao
+            </span>
+            <h1 class="hero-title">
+              Intercambia,<br>
+              <span class="hero-title-line2">juega y conecta.</span>
+            </h1>
+            <p class="hero-sub">Un evento TCG en Bilbao abierto a cualquier juego, con foco especial en Pokémon.</p>
+            <div class="hero-buttons">
+              <a href="https://www.eventbrite.com/" target="_blank" rel="noopener" class="btn-primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                Comprar entradas
+              </a>
+              <a href="https://instagram.com/tradeitto" target="_blank" rel="noopener" class="btn-outline">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                Ver Instagram
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <img src="assets/logo.png" alt="Tradeitto" class="hero-logo-img" />
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ COUNTDOWN ══ -->
+  <section class="countdown-section" aria-label="Cuenta atrás para el evento">
+    <div class="container">
+      <p class="countdown-label">El evento empieza en</p>
+      <div class="countdown-blocks" id="countdownBlocks">
+        <div class="countdown-block">
+          <span class="countdown-num" id="cd-days">--</span>
+          <span class="countdown-unit">Días</span>
+        </div>
+        <span class="countdown-sep" aria-hidden="true">:</span>
+        <div class="countdown-block">
+          <span class="countdown-num" id="cd-hours">--</span>
+          <span class="countdown-unit">Horas</span>
+        </div>
+        <span class="countdown-sep" aria-hidden="true">:</span>
+        <div class="countdown-block">
+          <span class="countdown-num" id="cd-minutes">--</span>
+          <span class="countdown-unit">Minutos</span>
+        </div>
+        <span class="countdown-sep" aria-hidden="true">:</span>
+        <div class="countdown-block">
+          <span class="countdown-num" id="cd-seconds">--</span>
+          <span class="countdown-unit">Segundos</span>
+        </div>
+      </div>
+      <p class="countdown-started" id="countdownStarted" hidden>¡El evento ha comenzado! 🎉</p>
+    </div>
+  </section>
+
+  <!-- ══ INFO CLAVE ══ -->
+  <section class="section section-alt" id="info">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-label">Lo esencial</p>
+        <h2 class="section-title">Todo lo importante<br>a primera vista.</h2>
+      </div>
+      <div class="info-grid">
+
+        <div class="info-card reveal">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <p class="info-card-label">Cuándo</p>
+          <p class="info-card-value">7 de junio de 2026</p>
+          <p>Reserva la fecha para una jornada completa de intercambio y comunidad.</p>
+        </div>
+
+        <div class="info-card reveal">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <p class="info-card-label">Dónde</p>
+          <p class="info-card-value">Gran Hotel Bilbao</p>
+          <p>Un espacio cómodo y reconocible en el corazón de Bilbao.</p>
+        </div>
+
+        <div class="info-card reveal">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/>
+            </svg>
+          </div>
+          <p class="info-card-label">Entrada</p>
+          <p class="info-card-value">10 EUR</p>
+          <p>Incluye 2 sobres de Pokémon y número para el sorteo presencial.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ QUÉ ES TRADEITTO ══ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-text reveal">
+          <div class="section-heading">
+            <p class="section-label">El concepto</p>
+            <h2 class="section-title">Un evento sencillo<br>y bien cuidado.</h2>
+          </div>
+          <p class="section-desc">
+            Tradeitto está pensado para que la gente llegue, entienda rápido de qué va y pueda disfrutarlo sin complicaciones.
+            Abierto a cualquier TCG, con especial foco en Pokémon.
+          </p>
+        </div>
+        <div class="about-list">
+          <div class="about-item reveal">
+            <div class="about-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 16V4m0 0L3 8m4-4l4 4M17 8v12m0 0l4-4m-4 4l-4-4"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Intercambia</h4>
+              <p>Revisa cartas y haz trades con otros aficionados con calma y sin presión.</p>
+            </div>
+          </div>
+          <div class="about-item reveal">
+            <div class="about-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Juega</h4>
+              <p>Encuentra rivales y echa partidas durante toda la jornada. Todos los niveles son bienvenidos.</p>
+            </div>
+          </div>
+          <div class="about-item reveal">
+            <div class="about-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Conecta</h4>
+              <p>Conoce gente con tus mismos intereses en un ambiente relajado y sin pretensiones.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ QUÉ INCLUYE LA ENTRADA ══ -->
+  <section class="section section-alt" id="incluye">
+    <div class="container">
+      <div class="includes-header">
+        <div class="reveal">
+          <div class="section-heading">
+            <p class="section-label">La entrada</p>
+            <h2 class="section-title">Tu entrada incluye<br>todo esto.</h2>
+          </div>
+        </div>
+        <div class="price-tag reveal">
+          <span class="price-tag-amount">10€</span>
+          <span class="price-tag-sub">por persona</span>
+        </div>
+      </div>
+      <div class="includes-grid">
+
+        <div class="include-card reveal">
+          <div class="include-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3>Acceso completo</h3>
+          <p>Entrada al recinto durante toda la jornada del evento, sin restricciones de horario.</p>
+        </div>
+
+        <div class="include-card reveal">
+          <div class="include-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+            </svg>
+          </div>
+          <h3>2 sobres de Pokémon</h3>
+          <p>Incluidos con cada entrada general. Los recogerás al llegar al evento.</p>
+        </div>
+
+        <div class="include-card reveal">
+          <div class="include-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+            </svg>
+          </div>
+          <h3>Sorteo presencial</h3>
+          <p>Número exclusivo incluido. El sorteo se celebra en directo, hay que estar presente para ganar.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ QUIÉN ORGANIZA ══ -->
+  <section class="section" id="organizadores">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-heading">
+          <p class="section-label">El equipo</p>
+          <h2 class="section-title">Quién hay detrás.</h2>
+        </div>
+        <p class="section-desc">Organizadores apasionados del TCG comprometidos con crear un evento de calidad para la comunidad de Bilbao y alrededores.</p>
+      </div>
+      <div class="organizers-grid">
+
+        <div class="organizer-card reveal">
+          <div class="organizer-avatar">
+            <img src="assets/logo-srtaeevee.png" alt="Srta.Eevee" />
+          </div>
+          <h3>Srta.Eevee</h3>
+          <p class="organizer-role">Organizadora</p>
+        </div>
+
+        <div class="organizer-card reveal">
+          <div class="organizer-avatar">
+            <img src="assets/logo-pingucollects.png" alt="Pingucollects" />
+          </div>
+          <h3>Pingucollects</h3>
+          <p class="organizer-role">Organizador</p>
+        </div>
+
+        <div class="organizer-card reveal">
+          <div class="organizer-avatar">
+            <img src="assets/logo-eeveecards.png" alt="Eeveecards" />
+          </div>
+          <h3>Eeveecards</h3>
+          <p class="organizer-role">Organizador · Tienda</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA FINAL ══ -->
+  <section class="cta-section" id="entradas">
+    <div class="container">
+      <h2 class="cta-title reveal">Nos vemos el 7 de junio<br>en Bilbao.</h2>
+      <p class="cta-sub reveal">Hazte con tu entrada antes de que se agoten. Las plazas son limitadas.</p>
+      <a href="https://www.eventbrite.com/" target="_blank" rel="noopener" class="btn-primary reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        Comprar entradas en Eventbrite
+      </a>
+      <p class="cta-trust">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Compra segura a través de Eventbrite
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="index.html" class="footer-logo">
+          <img src="assets/logo.png" alt="Tradeitto" />
+        </a>
+        <nav class="footer-links">
+          <a href="faq.html">FAQ</a>
+          <a href="https://instagram.com/tradeitto" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.eventbrite.com/" target="_blank" rel="noopener">Entradas</a>
+        </nav>
+        <p class="footer-copy">Tradeitto · Evento TCG en Bilbao · 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- COUNTDOWN JS -->
+  <script>
+  (function () {
+    // 7 de junio de 2026 a las 10:00 hora Madrid (CEST = UTC+2)
+    var TARGET = new Date('2026-06-07T08:00:00Z');
+
+    var elDays    = document.getElementById('cd-days');
+    var elHours   = document.getElementById('cd-hours');
+    var elMinutes = document.getElementById('cd-minutes');
+    var elSeconds = document.getElementById('cd-seconds');
+    var elBlocks  = document.getElementById('countdownBlocks');
+    var elStarted = document.getElementById('countdownStarted');
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function animateNum(el, newVal) {
+      if (el.textContent === newVal) return;
+      el.classList.remove('cd-flip-in', 'cd-flip-out');
+      el.classList.add('cd-flip-out');
+      setTimeout(function () {
+        el.textContent = newVal;
+        el.classList.remove('cd-flip-out');
+        void el.offsetWidth; // force reflow
+        el.classList.add('cd-flip-in');
+        el.addEventListener('animationend', function () {
+          el.classList.remove('cd-flip-in');
+        }, { once: true });
+      }, 150);
+    }
+
+    function tick() {
+      var diff = TARGET.getTime() - Date.now();
+
+      if (diff <= 0) {
+        elBlocks.style.display = 'none';
+        elStarted.removeAttribute('hidden');
+        clearInterval(timer);
+        return;
+      }
+
+      var total = Math.floor(diff / 1000);
+      var d = Math.floor(total / 86400);
+      var h = Math.floor((total % 86400) / 3600);
+      var m = Math.floor((total % 3600) / 60);
+      var s = total % 60;
+
+      animateNum(elDays,    pad(d));
+      animateNum(elHours,   pad(h));
+      animateNum(elMinutes, pad(m));
+      animateNum(elSeconds, pad(s));
+    }
+
+    tick();
+    var timer = setInterval(tick, 1000);
+  })();
+  </script>
+</body>
+</html>
