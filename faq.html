@@ -3,131 +3,198 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tradeitto | FAQ</title>
-  <link rel="icon" href="assets/TRADEITTO LOGO.png" type="image/png" />
+  <title>FAQ — Tradeitto · Evento TCG en Bilbao</title>
+  <meta name="description" content="Preguntas frecuentes sobre Tradeitto, el primer evento TCG de Bilbao. Todo lo que necesitas saber antes de venir." />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@600;700;800&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="page-wash" aria-hidden="true"></div>
-  <header class="site-header" id="navbar">
-    <div class="container nav">
-      <a href="index.html" class="brand" aria-label="Tradeitto inicio">
-        <img src="assets/TRADEITTO LOGO.png" alt="Logo de Tradeitto" />
-        <span>Tradeitto</span>
+
+  <!-- ══ NAVBAR ══ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        Tradeitto
       </a>
-      <nav class="desktop-nav" aria-label="Principal">
-        <a href="index.html">Inicio</a>
-        <a href="index.html#evento">Evento</a>
-        <a href="faq.html" class="is-active">FAQ</a>
-        <a href="https://instagram.com/tradeitto" target="_blank" rel="noreferrer">Instagram</a>
+      <nav class="nav-links">
+        <a href="index.html">Evento</a>
+        <a href="programa.html">Programa</a>
+        <a href="faq.html" class="active">FAQ</a>
+        <a href="https://instagram.com/tradeitto" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.eventbrite.com/" target="_blank" rel="noopener" class="nav-cta">Comprar entradas</a>
       </nav>
-      <a href="https://www.eventbrite.com/" class="btn btn-primary desktop-cta" target="_blank" rel="noreferrer">Comprar entradas</a>
-      <button class="menu-toggle" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Inicio</a>
-      <a href="index.html#evento">Evento</a>
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="index.html">Evento</a>
+      <a href="programa.html">Programa</a>
       <a href="faq.html">FAQ</a>
-      <a href="https://instagram.com/tradeitto" target="_blank" rel="noreferrer">Instagram</a>
-      <a href="https://www.eventbrite.com/" target="_blank" rel="noreferrer">Comprar entradas</a>
-    </div>
+      <a href="https://instagram.com/tradeitto" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.eventbrite.com/" target="_blank" rel="noopener" class="nav-cta">Comprar entradas</a>
+    </nav>
   </header>
 
-  <main class="page-main">
-    <section class="page-hero">
-      <div class="container narrow reveal">
-        <span class="eyebrow">FAQ</span>
-        <h1>Todo lo que necesitas saber antes de venir.</h1>
-        <p>
-          Una pagina simple para resolver dudas rapidas sobre el evento, la entrada y el ambiente que encontraras en Tradeitto.
-        </p>
+  <!-- ══ HERO COMPACTO ══ -->
+  <section class="faq-hero">
+    <div class="hero-grid"></div>
+    <div class="hero-blob-organic blob-cyan" style="width:400px;height:400px;opacity:0.7"></div>
+    <div class="hero-blob-organic blob-purple" style="width:320px;height:320px;bottom:-60px;left:-60px;top:auto;right:auto;opacity:0.7"></div>
+    <div class="container">
+      <div class="faq-hero-content">
+        <span class="hero-badge" style="animation-delay:0.05s">
+          <span class="hero-badge-dot"></span>
+          Tradeitto · 7 de junio · Bilbao
+        </span>
+        <h1 style="animation-delay:0.18s;opacity:0;transform:translateY(18px);animation:fadeUp 0.65s cubic-bezier(0.4,0,0.2,1) 0.18s forwards">Preguntas frecuentes</h1>
+        <p style="animation-delay:0.3s;opacity:0;transform:translateY(18px);animation:fadeUp 0.65s cubic-bezier(0.4,0,0.2,1) 0.3s forwards">Todo lo que necesitas saber antes de venir.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section">
-      <div class="container faq-list slim">
-        <div class="faq-item reveal">
-          <button class="faq-question" aria-expanded="false">
-            <span>Hay que jugar Pokemon para venir?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>No. Tradeitto esta abierto a cualquier TCG, aunque el foco principal del evento estara en Pokemon TCG.</p>
-          </div>
-        </div>
+  <!-- ══ FAQ ══ -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="faq-section-inner">
 
-        <div class="faq-item reveal">
-          <button class="faq-question" aria-expanded="false">
-            <span>Donde se celebra el evento?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>El evento se celebra el 6 de junio de 2026 en Gran Hotel Bilbao.</p>
-          </div>
-        </div>
+        <div class="faq-list">
 
-        <div class="faq-item reveal">
-          <button class="faq-question" aria-expanded="false">
-            <span>Que incluye la entrada?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Incluye acceso al evento, dos sobres de Pokemon y un numero para el sorteo presencial.</p>
+          <!-- 1 — abierta por defecto -->
+          <div class="faq-item open reveal">
+            <button class="faq-question" aria-expanded="true">
+              <span>¿Hay que jugar a Pokémon para venir?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>No. Tradeitto es un evento abierto a cualquier persona que le gusten los juegos de cartas coleccionables. El foco principal es Pokémon, pero si juegas a otro TCG eres igual de bienvenido. Y si acabas de descubrir el mundo de las cartas, también: es el sitio perfecto para empezar.</p>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div class="faq-item reveal">
-          <button class="faq-question" aria-expanded="false">
-            <span>Quien organiza Tradeitto?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>El evento esta organizado por Srta.Eevee, Pingucollects y la tienda Eeveecards.</p>
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Dónde se celebra el evento?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>El evento se celebra en el Gran Hotel Bilbao, un espacio céntrico y bien comunicado en el corazón de la ciudad. La dirección exacta y los detalles de acceso se confirmarán próximamente en nuestras redes sociales.</p>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div class="faq-item reveal">
-          <button class="faq-question" aria-expanded="false">
-            <span>Habra espacio para intercambiar y jugar?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Si. Tradeitto esta pensado para que puedas revisar cartas, intercambiar con calma y tambien jugar durante la jornada.</p>
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Qué incluye la entrada?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Tu entrada de 10€ incluye tres cosas: acceso completo al recinto durante toda la jornada, 2 sobres de Pokémon que recogerás al llegar, y un número exclusivo para participar en el sorteo presencial del evento.</p>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div class="faq-item reveal">
-          <button class="faq-question" aria-expanded="false">
-            <span>Donde puedo seguir las novedades?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Puedes seguir todas las novedades en <a href="https://instagram.com/tradeitto" class="text-link" target="_blank" rel="noreferrer">instagram.com/tradeitto</a>.</p>
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Quién organiza Tradeitto?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Tradeitto está organizado por Srta.Eevee, Pingucollects y Eeveecards —apasionados del mundo TCG con experiencia en la comunidad de Bilbao—, comprometidos con crear un evento de calidad, accesible y bien cuidado para todos.</p>
+              </div>
+            </div>
           </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Habrá espacio para intercambiar y para jugar?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Sí. Habrá una zona dedicada a intercambios y otra para partidas libres. Puedes pasar el día haciendo trades, jugando, o simplemente conociendo a otras personas de la comunidad. No hay ninguna obligación de hacer nada en concreto.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Se puede vender o solo hacer intercambios?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>El evento está pensado principalmente para intercambios entre asistentes, aunque también es posible vender cartas de forma directa. No hay restricciones al respecto. Lo importante es que las transacciones sean justas y respetuosas.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Hay algún límite de aforo?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Sí, el aforo es limitado. Se recomienda comprar la entrada con antelación para asegurar tu plaza. Una vez se agoten las entradas disponibles, no habrá venta en puerta.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Dónde puedo seguir las novedades?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Todas las novedades —fecha exacta, ubicación, posibles sorpresas y cualquier actualización importante— las publicaremos en nuestro Instagram <a href="https://instagram.com/tradeitto" target="_blank" rel="noopener" style="color:var(--accent)">@tradeitto</a>. Es el mejor sitio para estar al día.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="site-footer">
-    <div class="container footer">
-      <div>
-        <p class="footer-brand">Tradeitto</p>
-        <p class="footer-copy">FAQ clara, directa y lista para publico final.</p>
-      </div>
-      <div class="footer-links">
-        <a href="index.html">Inicio</a>
-        <a href="index.html#evento">Evento</a>
-        <a href="https://instagram.com/tradeitto" target="_blank" rel="noreferrer">Instagram</a>
-        <a href="https://www.eventbrite.com/" target="_blank" rel="noreferrer">Entradas</a>
+  <!-- ══ CTA ══ -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title reveal">¿Listo para venir?</h2>
+      <p class="cta-sub reveal">Hazte con tu entrada antes de que se agoten.</p>
+      <a href="https://www.eventbrite.com/" target="_blank" rel="noopener" class="btn-primary reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        Comprar entradas en Eventbrite
+      </a>
+      <p class="cta-trust">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Compra segura a través de Eventbrite
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="index.html" class="footer-logo">
+          <img src="assets/logo.png" alt="Tradeitto" />
+        </a>
+        <nav class="footer-links">
+          <a href="programa.html">Programa</a>
+          <a href="faq.html">FAQ</a>
+          <a href="https://instagram.com/tradeitto" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.eventbrite.com/" target="_blank" rel="noopener">Entradas</a>
+        </nav>
+        <p class="footer-copy">Tradeitto · Evento TCG en Bilbao · 2026</p>
       </div>
     </div>
   </footer>

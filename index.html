@@ -3,151 +3,222 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tradeitto | Evento TCG en Bilbao</title>
-  <meta
-    name="description"
-    content="Tradeitto llega el 6 de junio de 2026 a Gran Hotel Bilbao. Un evento para intercambiar, jugar y conectar alrededor del TCG, con foco especial en Pokemon."
-  />
-  <link rel="icon" href="assets/TRADEITTO LOGO.png" type="image/png" />
+  <title>Tradeitto · Próximamente</title>
+  <link rel="icon" href="assets/logo.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@600;700;800&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: #0e0818;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100dvh;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    /* ── Blobs de fondo ── */
+    .blob {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(90px);
+      z-index: 0;
+    }
+    .blob-1 { width: 650px; height: 650px; background: rgba(123,53,193,0.22); top: -220px; left: -180px; }
+    .blob-2 { width: 520px; height: 520px; background: rgba(42,184,184,0.13); bottom: -200px; right: -140px; }
+    .blob-3 { width: 280px; height: 280px; background: rgba(201,168,48,0.09); top: 50%; left: 50%; transform: translate(-50%,-50%); }
+
+    /* ── Wrap principal ── */
+    .wrap {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      text-align: center;
+      padding: 0 24px;
+    }
+
+    /* Logo */
+    .logo-img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 4px 28px rgba(123,53,193,0.55));
+    }
+
+    /* Nombre */
+    .brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 56px;
+    }
+
+    /* ── Contador ── */
+    .countdown {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .cd-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cd-num {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(3.8rem, 11vw, 7.5rem);
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1;
+      background: linear-gradient(135deg, #c9a830 0%, #ffffff 50%, #8de8e8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.03em;
+      min-width: 2ch;
+      text-align: center;
+    }
+
+    .cd-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* Separador ":" */
+    .cd-sep {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      font-style: italic;
+      color: rgba(255,255,255,0.15);
+      line-height: 1;
+      margin-bottom: 26px; /* alinear con los números */
+      user-select: none;
+    }
+
+    /* Estado: ya ha comenzado */
+    .started {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 700;
+      background: linear-gradient(135deg, #c9a830, #8de8e8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-align: center;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 520px) {
+      .logo-img { width: 64px; height: 64px; margin-bottom: 16px; }
+      .brand { margin-bottom: 44px; letter-spacing: 0.2em; }
+      .countdown { gap: 6px; }
+      .cd-sep { margin-bottom: 22px; }
+    }
+
+    @media (max-width: 380px) {
+      .countdown { gap: 4px; }
+    }
+  </style>
 </head>
 <body>
-  <div class="page-wash" aria-hidden="true"></div>
-  <header class="site-header" id="navbar">
-    <div class="container nav simple-nav">
-      <a href="#inicio" class="brand" aria-label="Tradeitto inicio">
-        <img src="assets/TRADEITTO LOGO.png" alt="Logo de Tradeitto" />
-        <span>Tradeitto</span>
-      </a>
 
-      <nav class="desktop-nav" aria-label="Principal">
-        <a href="#evento">Evento</a>
-        <a href="faq.html">FAQ</a>
-        <a href="#organiza">Organiza</a>
-        <a href="https://instagram.com/tradeitto" target="_blank" rel="noreferrer">Instagram</a>
-      </nav>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
 
-      <a href="https://www.eventbrite.com/" class="btn btn-primary desktop-cta" target="_blank" rel="noreferrer">Comprar entradas</a>
+  <div class="wrap">
+    <img src="assets/logo.png" alt="Tradeitto" class="logo-img" />
+    <p class="brand">Tradeitto</p>
 
-      <button class="menu-toggle" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#evento">Evento</a>
-      <a href="faq.html">FAQ</a>
-      <a href="#organiza">Organiza</a>
-      <a href="https://instagram.com/tradeitto" target="_blank" rel="noreferrer">Instagram</a>
-      <a href="https://www.eventbrite.com/" target="_blank" rel="noreferrer">Comprar entradas</a>
-    </div>
-  </header>
-
-  <main id="inicio">
-    <section class="hero hero-minimal">
-      <div class="hero-glow hero-glow-a"></div>
-      <div class="hero-glow hero-glow-b"></div>
-      <div class="container hero-single">
-        <div class="hero-copy reveal">
-          <span class="eyebrow">6 de junio de 2026 · Gran Hotel Bilbao</span>
-          <h1>Intercambia, juega y conecta.</h1>
-          <p class="hero-short">
-            Un evento TCG en Bilbao abierto a cualquier juego, con foco especial en Pokemon.
-          </p>
-
-          <div class="hero-actions">
-            <a href="https://www.eventbrite.com/" class="btn btn-primary" target="_blank" rel="noreferrer">Comprar entradas</a>
-            <a href="https://instagram.com/tradeitto" class="btn btn-secondary" target="_blank" rel="noreferrer">Ver Instagram</a>
-          </div>
-        </div>
-
-        <div class="hero-logo-panel reveal">
-          <img src="assets/TRADEITTO LOGO.png" alt="Logo de Tradeitto" class="hero-logo-large" />
-        </div>
+    <div class="countdown" id="countdown">
+      <div class="cd-unit">
+        <span class="cd-num" id="cd-days">--</span>
+        <span class="cd-label">días</span>
       </div>
-    </section>
-
-    <section class="section quick-section" id="evento">
-      <div class="container">
-        <div class="quick-grid">
-          <article class="quick-card reveal">
-            <span class="card-number">Cuando</span>
-            <h2>6 Junio</h2>
-            <p>Una jornada para disfrutar del TCG en comunidad.</p>
-          </article>
-
-          <article class="quick-card reveal">
-            <span class="card-number">Donde</span>
-            <h2>Gran Hotel Bilbao</h2>
-            <p>Un punto de encuentro comodo, centrico y facil para reunirse.</p>
-          </article>
-
-          <article class="quick-card reveal">
-            <span class="card-number">Entrada</span>
-            <h2>10 EUR</h2>
-            <p>Incluye 2 sobres de Pokemon y numero para sorteo presencial.</p>
-          </article>
-        </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-unit">
+        <span class="cd-num" id="cd-hours">--</span>
+        <span class="cd-label">horas</span>
       </div>
-    </section>
-
-    <section class="section focus-section">
-      <div class="container focus-panel reveal">
-        <div>
-          <span class="eyebrow light-pill">De que va</span>
-          <h2>Un evento sencillo: venir, ver cartas, jugar y pasarlo bien.</h2>
-        </div>
-        <div class="focus-tags">
-          <span>Intercambio</span>
-          <span>Juego</span>
-          <span>Comunidad</span>
-          <span>Pokemon</span>
-          <span>Cualquier TCG</span>
-        </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-unit">
+        <span class="cd-num" id="cd-minutes">--</span>
+        <span class="cd-label">minutos</span>
       </div>
-    </section>
-
-    <section class="section organizer-section" id="organiza">
-      <div class="container organizer-panel reveal">
-        <span class="card-number">Organiza</span>
-        <h2>Srta.Eevee, Pingucollects y la tienda Eeveecards.</h2>
-        <p>
-          Tradeitto nace desde la comunidad para crear un evento visual, cercano y facil de disfrutar.
-        </p>
-      </div>
-    </section>
-
-    <section class="section cta-section">
-      <div class="container cta-panel reveal">
-        <h2>Hazte con tu entrada.</h2>
-        <p>Nos vemos el 6 de junio en Bilbao.</p>
-        <a href="https://www.eventbrite.com/" class="btn btn-primary cta-big" target="_blank" rel="noreferrer">Comprar entradas ahora</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer">
-      <div>
-        <p class="footer-brand">Tradeitto</p>
-        <p class="footer-copy">Evento de TCG en Bilbao.</p>
-      </div>
-      <div class="footer-links">
-        <a href="faq.html">FAQ</a>
-        <a href="https://instagram.com/tradeitto" target="_blank" rel="noreferrer">Instagram</a>
-        <a href="https://www.eventbrite.com/" target="_blank" rel="noreferrer">Entradas</a>
+      <span class="cd-sep">:</span>
+      <div class="cd-unit">
+        <span class="cd-num" id="cd-seconds">--</span>
+        <span class="cd-label">segundos</span>
       </div>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
+    <p class="started" id="started" style="display:none">Estamos aquí.</p>
+  </div>
+
+  <script>
+    // ── CAMBIA SOLO ESTAS DOS LÍNEAS ──────────────────
+    var TARGET = new Date('2026-06-07T08:00:00Z');
+    //   20 de abril → new Date('2026-04-20T08:00:00Z')
+    // ─────────────────────────────────────────────────
+
+    var elDays    = document.getElementById('cd-days');
+    var elHours   = document.getElementById('cd-hours');
+    var elMinutes = document.getElementById('cd-minutes');
+    var elSeconds = document.getElementById('cd-seconds');
+    var elCountdown = document.getElementById('countdown');
+    var elStarted   = document.getElementById('started');
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function tick() {
+      var diff = TARGET.getTime() - Date.now();
+      if (diff <= 0) {
+        elCountdown.style.display = 'none';
+        elStarted.style.display = 'block';
+        clearInterval(timer);
+        return;
+      }
+      var totalSec = Math.floor(diff / 1000);
+      var days    = Math.floor(totalSec / 86400);
+      var hours   = Math.floor((totalSec % 86400) / 3600);
+      var minutes = Math.floor((totalSec % 3600) / 60);
+      var seconds = totalSec % 60;
+
+      elDays.textContent    = days;
+      elHours.textContent   = pad(hours);
+      elMinutes.textContent = pad(minutes);
+      elSeconds.textContent = pad(seconds);
+    }
+
+    tick();
+    var timer = setInterval(tick, 1000);
+  </script>
 </body>
 </html>

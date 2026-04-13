@@ -1,102 +1,75 @@
+/* ================================================
+   TRADEITTO — Script
+   ================================================ */
+
+// ── Navbar scroll effect ──
 const navbar = document.getElementById('navbar');
-
-function updateNavbarState() {
-  if (!navbar) return;
-  navbar.classList.toggle('scrolled', window.scrollY > 20);
+if (navbar) {
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
 }
 
-updateNavbarState();
-window.addEventListener('scroll', updateNavbarState, { passive: true });
-
+// ── Hamburger / mobile nav ──
 const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
+const mobileNav  = document.getElementById('mobileNav');
 
-if (hamburger && mobileMenu) {
+if (hamburger && mobileNav) {
   hamburger.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', String(isOpen));
+    hamburger.classList.toggle('active');
+    mobileNav.classList.toggle('open');
   });
-
-  mobileMenu.querySelectorAll('a').forEach(link => {
+  mobileNav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.classList.remove('active');
+      mobileNav.classList.remove('open');
     });
   });
 }
 
-const modalOverlay = document.getElementById('modalOverlay');
-const modalClose = document.getElementById('modalClose');
-const buyBtn = document.getElementById('buy-ticket-btn');
-
-function openModal() {
-  if (!modalOverlay) return;
-  modalOverlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-  if (!modalOverlay) return;
-  modalOverlay.classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-if (buyBtn) {
-  buyBtn.addEventListener('click', event => {
-    const href = buyBtn.getAttribute('href');
-    if (href && href !== '#') return;
-    event.preventDefault();
-    openModal();
-  });
-}
-
-if (modalClose) {
-  modalClose.addEventListener('click', closeModal);
-}
-
-if (modalOverlay) {
-  modalOverlay.addEventListener('click', event => {
-    if (event.target === modalOverlay) {
-      closeModal();
-    }
-  });
-}
-
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && modalOverlay?.classList.contains('open')) {
-    closeModal();
-  }
-});
-
-document.querySelectorAll('.faq-question').forEach(button => {
-  button.addEventListener('click', () => {
-    const isOpen = button.getAttribute('aria-expanded') === 'true';
-
-    document.querySelectorAll('.faq-question').forEach(item => {
-      item.setAttribute('aria-expanded', 'false');
-      item.nextElementSibling?.classList.remove('open');
+// ── Smooth scroll (anchors on same page) ──
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', e => {
+    const id = anchor.getAttribute('href');
+    if (!id || id === '#') return;
+    const target = document.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    window.scrollTo({
+      top: target.getBoundingClientRect().top + window.scrollY - 76,
+      behavior: 'smooth',
     });
-
-    if (!isOpen) {
-      button.setAttribute('aria-expanded', 'true');
-      button.nextElementSibling?.classList.add('open');
-    }
   });
 });
 
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12, rootMargin: '0px 0px -30px 0px' }
-);
-
-document.querySelectorAll('.reveal').forEach((element, index) => {
-  element.style.transitionDelay = `${index * 0.05}s`;
-  observer.observe(element);
+// ── FAQ accordion ──
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    // Re-open if it was closed
+    if (!isOpen) item.classList.add('open');
+  });
 });
+
+// ── Scroll reveal ──
+const reveals = document.querySelectorAll('.reveal');
+if (reveals.length) {
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -36px 0px' }
+  );
+  reveals.forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 4) * 0.08}s`;
+    observer.observe(el);
+  });
+}
