@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tradeitto · Próximamente · Bilbao</title>
+  <title>Tradeitto · Próximamente</title>
   <link rel="icon" href="assets/logo.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,400;1,9..144,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -29,33 +29,20 @@
       position: relative;
     }
 
-    /* ── Fondo con blobs ── */
-    .bg-blob {
+    /* ── Blobs de fondo ── */
+    .blob {
       position: fixed;
       border-radius: 50%;
       pointer-events: none;
-      filter: blur(80px);
+      filter: blur(90px);
       z-index: 0;
     }
-    .bg-blob-1 {
-      width: 600px; height: 600px;
-      background: rgba(123, 53, 193, 0.25);
-      top: -200px; left: -150px;
-    }
-    .bg-blob-2 {
-      width: 500px; height: 500px;
-      background: rgba(42, 184, 184, 0.15);
-      bottom: -180px; right: -120px;
-    }
-    .bg-blob-3 {
-      width: 300px; height: 300px;
-      background: rgba(201, 168, 48, 0.1);
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-    }
+    .blob-1 { width: 650px; height: 650px; background: rgba(123,53,193,0.22); top: -220px; left: -180px; }
+    .blob-2 { width: 520px; height: 520px; background: rgba(42,184,184,0.13); bottom: -200px; right: -140px; }
+    .blob-3 { width: 280px; height: 280px; background: rgba(201,168,48,0.09); top: 50%; left: 50%; transform: translate(-50%,-50%); }
 
-    /* ── Contenido ── */
-    .counter-wrap {
+    /* ── Wrap principal ── */
+    .wrap {
       position: relative;
       z-index: 2;
       display: flex;
@@ -66,98 +53,79 @@
       padding: 0 24px;
     }
 
-    .counter-logo {
-      width: 90px;
-      height: 90px;
+    /* Logo */
+    .logo-img {
+      width: 80px;
+      height: 80px;
       object-fit: contain;
-      margin-bottom: 28px;
-      filter: drop-shadow(0 4px 24px rgba(123,53,193,0.5));
+      margin-bottom: 20px;
+      filter: drop-shadow(0 4px 28px rgba(123,53,193,0.55));
     }
 
-    .counter-label {
-      font-size: 0.72rem;
+    /* Nombre */
+    .brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
       font-weight: 700;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 12px;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 56px;
     }
 
-    .counter-days {
+    /* ── Contador ── */
+    .countdown {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .cd-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cd-num {
       font-family: 'Fraunces', serif;
-      font-size: clamp(7rem, 22vw, 14rem);
+      font-size: clamp(3.8rem, 11vw, 7.5rem);
       font-weight: 700;
       font-style: italic;
-      line-height: 0.9;
-      background: linear-gradient(135deg, #c9a830 0%, #fff 45%, #8de8e8 100%);
+      line-height: 1;
+      background: linear-gradient(135deg, #c9a830 0%, #ffffff 50%, #8de8e8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.03em;
+      min-width: 2ch;
+      text-align: center;
     }
 
-    .counter-days-label {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(1.4rem, 4vw, 2.2rem);
+    .cd-label {
+      font-size: 0.62rem;
       font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* Separador ":" */
+    .cd-sep {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.5rem, 7vw, 5rem);
       font-style: italic;
-      color: rgba(255,255,255,0.55);
-      margin-top: 8px;
-      margin-bottom: 40px;
-      letter-spacing: -0.02em;
+      color: rgba(255,255,255,0.15);
+      line-height: 1;
+      margin-bottom: 26px; /* alinear con los números */
+      user-select: none;
     }
 
-    .counter-date {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 50px;
-      padding: 10px 22px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 36px;
-      backdrop-filter: blur(10px);
-    }
-    .counter-date-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: #c9a830;
-      animation: pulse 2s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.4; transform: scale(0.7); }
-    }
-
-    .counter-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: linear-gradient(135deg, #7b35c1, #5a1fa0);
-      color: #fff;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.92rem;
-      font-weight: 600;
-      padding: 13px 28px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: filter 0.2s, transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 8px 32px rgba(123,53,193,0.4);
-    }
-    .counter-cta:hover {
-      filter: brightness(1.15);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(123,53,193,0.55);
-    }
-
-    /* Estado: evento comenzado */
-    .counter-started {
+    /* Estado: ya ha comenzado */
+    .started {
       font-family: 'Fraunces', serif;
       font-style: italic;
-      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-size: clamp(1.8rem, 5vw, 3rem);
       font-weight: 700;
       background: linear-gradient(135deg, #c9a830, #8de8e8);
       -webkit-background-clip: text;
@@ -166,100 +134,91 @@
       text-align: center;
     }
 
-    /* ── Footer discreto ── */
-    .counter-footer {
-      position: fixed;
-      bottom: 24px;
-      left: 0; right: 0;
-      text-align: center;
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.2);
-      z-index: 2;
+    /* ── Mobile ── */
+    @media (max-width: 520px) {
+      .logo-img { width: 64px; height: 64px; margin-bottom: 16px; }
+      .brand { margin-bottom: 44px; letter-spacing: 0.2em; }
+      .countdown { gap: 6px; }
+      .cd-sep { margin-bottom: 22px; }
     }
-    .counter-footer a {
-      color: rgba(255,255,255,0.35);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .counter-footer a:hover { color: rgba(255,255,255,0.65); }
 
-    @media (max-width: 480px) {
-      .counter-logo { width: 72px; height: 72px; margin-bottom: 20px; }
-      .counter-days-label { margin-bottom: 28px; }
+    @media (max-width: 380px) {
+      .countdown { gap: 4px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="bg-blob bg-blob-1"></div>
-  <div class="bg-blob bg-blob-2"></div>
-  <div class="bg-blob bg-blob-3"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
 
-  <div class="counter-wrap">
-    <img src="assets/logo.png" alt="Tradeitto" class="counter-logo" />
+  <div class="wrap">
+    <img src="assets/logo.png" alt="Tradeitto" class="logo-img" />
+    <p class="brand">Tradeitto</p>
 
-    <div id="counterMain">
-      <p class="counter-label">Faltan</p>
-      <p class="counter-days" id="daysNum">--</p>
-      <p class="counter-days-label" id="daysText">días</p>
-      <div class="counter-date">
-        <span class="counter-date-dot"></span>
-        <span id="dateLabel">7 de junio · 2026 · Bilbao</span>
+    <div class="countdown" id="countdown">
+      <div class="cd-unit">
+        <span class="cd-num" id="cd-days">--</span>
+        <span class="cd-label">días</span>
       </div>
-      <a href="sitio.html" class="counter-cta">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        Ver la web completa
-      </a>
+      <span class="cd-sep">:</span>
+      <div class="cd-unit">
+        <span class="cd-num" id="cd-hours">--</span>
+        <span class="cd-label">horas</span>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-unit">
+        <span class="cd-num" id="cd-minutes">--</span>
+        <span class="cd-label">minutos</span>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-unit">
+        <span class="cd-num" id="cd-seconds">--</span>
+        <span class="cd-label">segundos</span>
+      </div>
     </div>
 
-    <p class="counter-started" id="counterStarted" style="display:none">
-      ¡El evento ha comenzado! 🎉
-    </p>
+    <p class="started" id="started" style="display:none">Estamos aquí.</p>
   </div>
 
-  <footer class="counter-footer">
-    <a href="sitio.html">Tradeitto</a> · Evento TCG · Bilbao 2026
-  </footer>
-
   <script>
-    // ══════════════════════════════════════════════
-    //  CONFIGURACIÓN — CAMBIA AQUÍ LA FECHA
-    //  Formato: 'YYYY-MM-DDTHH:MM:SSZ'  (hora UTC)
-    //  Bilbao es UTC+2 en verano, así que si el
-    //  evento empieza a las 10:00 hora local,
-    //  pon T08:00:00Z
-    //
-    //  Ejemplos:
-    //    7 de junio  → '2026-06-07T08:00:00Z'
-    //   20 de abril  → '2026-04-20T08:00:00Z'
-    // ══════════════════════════════════════════════
-    var TARGET_DATE  = '2026-06-07T08:00:00Z';
-    var TARGET_LABEL = '7 de junio · 2026 · Bilbao';
-    // ══════════════════════════════════════════════
+    // ── CAMBIA SOLO ESTAS DOS LÍNEAS ──────────────────
+    var TARGET = new Date('2026-06-07T08:00:00Z');
+    //   20 de abril → new Date('2026-04-20T08:00:00Z')
+    // ─────────────────────────────────────────────────
 
-    var TARGET = new Date(TARGET_DATE);
-    document.getElementById('dateLabel').textContent = TARGET_LABEL;
+    var elDays    = document.getElementById('cd-days');
+    var elHours   = document.getElementById('cd-hours');
+    var elMinutes = document.getElementById('cd-minutes');
+    var elSeconds = document.getElementById('cd-seconds');
+    var elCountdown = document.getElementById('countdown');
+    var elStarted   = document.getElementById('started');
 
-    var elNum     = document.getElementById('daysNum');
-    var elText    = document.getElementById('daysText');
-    var elMain    = document.getElementById('counterMain');
-    var elStarted = document.getElementById('counterStarted');
+    function pad(n) { return String(n).padStart(2, '0'); }
 
     function tick() {
       var diff = TARGET.getTime() - Date.now();
       if (diff <= 0) {
-        elMain.style.display = 'none';
+        elCountdown.style.display = 'none';
         elStarted.style.display = 'block';
         clearInterval(timer);
         return;
       }
-      var days = Math.ceil(diff / 86400000);
-      elNum.textContent = days;
-      elText.textContent = days === 1 ? 'día' : 'días';
+      var totalSec = Math.floor(diff / 1000);
+      var days    = Math.floor(totalSec / 86400);
+      var hours   = Math.floor((totalSec % 86400) / 3600);
+      var minutes = Math.floor((totalSec % 3600) / 60);
+      var seconds = totalSec % 60;
+
+      elDays.textContent    = days;
+      elHours.textContent   = pad(hours);
+      elMinutes.textContent = pad(minutes);
+      elSeconds.textContent = pad(seconds);
     }
 
     tick();
-    var timer = setInterval(tick, 60000);
+    var timer = setInterval(tick, 1000);
   </script>
 </body>
 </html>
