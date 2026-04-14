@@ -200,9 +200,8 @@
     function tick() {
       var diff = TARGET.getTime() - Date.now();
       if (diff <= 0) {
-        elCountdown.style.display = 'none';
-        elStarted.style.display = 'block';
         clearInterval(timer);
+        window.location.replace('sitio.html');
         return;
       }
       var totalSec = Math.floor(diff / 1000);
