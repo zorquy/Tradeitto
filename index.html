@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="robots" content="noindex, nofollow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tradeitto · Próximamente</title>
   <link rel="icon" href="assets/logo.png" type="image/png" />
@@ -185,7 +184,7 @@
 
   <script>
     // ── CAMBIA SOLO ESTAS DOS LÍNEAS ──────────────────
-    var TARGET = new Date('2026-04-23T19:00:00Z'); // 23 abril a las 21:00 hora España (UTC+2)
+    var TARGET = new Date('2026-12-19T08:00:00Z');
     //   20 de abril → new Date('2026-04-20T08:00:00Z')
     // ─────────────────────────────────────────────────
 
@@ -201,8 +200,9 @@
     function tick() {
       var diff = TARGET.getTime() - Date.now();
       if (diff <= 0) {
+        elCountdown.style.display = 'none';
+        elStarted.style.display = 'block';
         clearInterval(timer);
-        window.location.replace('sitio.html');
         return;
       }
       var totalSec = Math.floor(diff / 1000);
