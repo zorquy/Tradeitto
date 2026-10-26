@@ -4,6 +4,8 @@ Options -Indexes
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+  # Bloquear acceso a la web completa — solo cuenta atrás visible
+  RewriteRule ^(sitio|faq|programa)\.html$ / [L,R=302]
 </IfModule>
 
 # Tradeitto
