@@ -203,6 +203,7 @@
         elCountdown.style.display = 'none';
         elStarted.style.display = 'block';
         clearInterval(timer);
+        abrirWeb();
         return;
       }
       var totalSec = Math.floor(diff / 1000);
@@ -215,6 +216,16 @@
       elHours.textContent   = pad(hours);
       elMinutes.textContent = pad(minutes);
       elSeconds.textContent = pad(seconds);
+    }
+
+    // Solo redirige cuando sitio.html ya no está bloqueado en .htaccess; si no, reintenta.
+    function abrirWeb() {
+      fetch('sitio.html', { cache: 'no-store', redirect: 'manual' })
+        .then(function (r) {
+          if (r.ok) window.location.replace('sitio.html');
+          else setTimeout(abrirWeb, 20000);
+        })
+        .catch(function () { setTimeout(abrirWeb, 20000); });
     }
 
     tick();

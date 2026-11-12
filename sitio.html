@@ -4,24 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tradeitto — Evento TCG en Bilbao · 7 de junio de 2026</title>
-  <meta name="description" content="Tradeitto es el primer evento TCG de Bilbao: intercambia, juega y conecta con la comunidad. Entrada 10€ con 2 sobres de Pokémon incluidos." />
+  <title>Tradeitto 2 — Evento Pokémon JCC en Bilbao · 19 de diciembre de 2026</title>
+  <meta name="description" content="Tradeitto 2: el evento comunitario de Pokémon JCC de Bilbao. Sábado 19 de diciembre en el Hotel Occidental Bilbao. Intercambio, torneo, sorteo y regalos con todas las entradas." />
   <link rel="icon" href="assets/logo.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .tickets-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; max-width: 980px; margin: 0 auto; }
+    .ticket { position: relative; display: flex; flex-direction: column; gap: 10px; text-align: left; }
+    .ticket h3 { margin: 0; }
+    .include-card .ticket-price { font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem; font-weight: 700; line-height: 1; color: var(--accent); }
+    .ticket-list { list-style: none; padding: 0; margin: 4px 0 0; display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; color: var(--text-2); }
+    .ticket-list li::before { content: '✦ '; color: var(--accent); }
+    .ticket-limit { margin-top: auto; padding-top: 8px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .ticket.vip { border: 1px solid rgba(201,168,48,0.4); background: rgba(201,168,48,0.05); }
+    .include-card.ticket.vip .ticket-price, .ticket.vip h3, .ticket.vip .ticket-limit, .ticket.vip .ticket-list li::before { color: #9a7a10; }
+    .ticket.torneo { border: 1px solid var(--cyan-border); background: var(--cyan-dim); }
+    .include-card.ticket.torneo .ticket-price, .ticket.torneo h3, .ticket.torneo .ticket-limit, .ticket.torneo .ticket-list li::before { color: #1a8a8a; }
+    .ticket-tag { position: absolute; top: 18px; right: 18px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border-radius: 50px; background: var(--bg-3); color: var(--accent); }
+    .extra-card { max-width: 980px; margin: 20px auto 0; display: flex; align-items: flex-start; gap: 20px; flex-direction: row; text-align: left; }
+    .extra-card > div:last-child { flex: 1; }
+    .extra-card ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 6px 20px; font-size: 0.92rem; color: var(--text-2); margin-top: 10px; }
+    .mini-prog { max-width: 760px; display: flex; flex-direction: column; gap: 10px; }
+    .mini-row { display: grid; grid-template-columns: 70px 1fr; gap: 18px; align-items: center; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 20px; }
+    .mini-row b { font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem; color: var(--accent); }
+    .mini-row span { font-weight: 600; color: var(--text); }
+    .mini-row small { display: block; font-weight: 400; color: var(--text-2); font-size: 0.85rem; }
+    .sponsors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 620px; margin-top: 32px; }
+    .sponsor-card { text-align: center; padding: 28px 20px; }
+    .sponsor-card h3 { font-size: 1.3rem; margin-bottom: 4px; }
+    @media (max-width: 600px) { .extra-card { flex-direction: column; } .mini-row { grid-template-columns: 56px 1fr; padding: 12px 14px; } }
+  </style>
 </head>
 <body>
 
   <!-- ══ NAVBAR ══ -->
   <header class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
+      <a href="sitio.html" class="nav-logo">
         Tradeitto
       </a>
       <nav class="nav-links">
         <a href="#info">Evento</a>
+        <a href="#entradas">Entradas</a>
         <a href="programa.html">Programa</a>
         <a href="faq.html">FAQ</a>
         <a href="https://instagram.com/tradeitto" target="_blank" rel="noopener">Instagram</a>
@@ -33,6 +60,7 @@
     </div>
     <nav class="mobile-nav" id="mobileNav">
       <a href="#info">Evento</a>
+      <a href="#entradas">Entradas</a>
       <a href="programa.html">Programa</a>
       <a href="faq.html">FAQ</a>
       <a href="https://instagram.com/tradeitto" target="_blank" rel="noopener">Instagram</a>
@@ -53,21 +81,21 @@
           <div class="hero-left">
             <span class="hero-badge">
               <span class="hero-badge-dot"></span>
-              7 de junio · Bilbao
+              19 de diciembre · Bilbao
             </span>
             <h1 class="hero-title">
               Intercambia,<br>
               <span class="hero-title-line2">juega y conecta.</span>
             </h1>
-            <p class="hero-sub">Un evento TCG en Bilbao abierto a cualquier juego, con foco especial en Pokémon.</p>
+            <p class="hero-sub">Vuelve Tradeitto: el evento comunitario de Pokémon JCC de Bilbao. Un día entero de intercambio, torneo, sorteo y regalos para todos.</p>
             <div class="hero-buttons">
               <a href="https://www.eventbrite.com/e/entradas-tradeitto-1987670163967" target="_blank" rel="noopener" class="btn-primary">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
                 Comprar entradas
               </a>
-              <a href="https://instagram.com/tradeitto" target="_blank" rel="noopener" class="btn-outline">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                Ver Instagram
+              <a href="programa.html" class="btn-outline">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Ver programa
               </a>
             </div>
           </div>
@@ -97,8 +125,8 @@
             </svg>
           </div>
           <p class="info-card-label">Cuándo</p>
-          <p class="info-card-value">7 de junio de 2026</p>
-          <p>De 10:00 a 16:00 h. Un día completo de intercambio y comunidad.</p>
+          <p class="info-card-value">Sábado 19 de diciembre</p>
+          <p>De 10:00 a 19:00 h. Con entrada VIP, desde las 9:00.</p>
         </div>
 
         <div class="info-card reveal">
@@ -108,8 +136,8 @@
             </svg>
           </div>
           <p class="info-card-label">Dónde</p>
-          <p class="info-card-value">Itsasmuseum · Bilbao</p>
-          <p>Céntrico y bien comunicado en el corazón de la ciudad.</p>
+          <p class="info-card-value">Hotel Occidental Bilbao</p>
+          <p>En la sala de eventos del hotel.</p>
         </div>
 
         <div class="info-card reveal">
@@ -118,9 +146,9 @@
               <path d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/>
             </svg>
           </div>
-          <p class="info-card-label">Entrada</p>
-          <p class="info-card-value">desde 12,50 EUR</p>
-          <p>Entrada General (12,50€) y entrada VIP (25€). Plazas limitadas.</p>
+          <p class="info-card-label">Entradas</p>
+          <p class="info-card-value">desde 12,50 €</p>
+          <p>General, VIP y Torneo. Todas con sorteo y regalos.</p>
         </div>
 
       </div>
@@ -134,11 +162,11 @@
         <div class="about-text reveal">
           <div class="section-heading">
             <p class="section-label">El concepto</p>
-            <h2 class="section-title">Un evento sencillo<br>y bien cuidado.</h2>
+            <h2 class="section-title">Un evento de comunidad,<br>no una feria de venta.</h2>
           </div>
           <p class="section-desc">
-            Tradeitto está pensado para que la gente llegue, entienda rápido de qué va y pueda disfrutarlo sin complicaciones.
-            Abierto a cualquier TCG, con especial foco en Pokémon.
+            Tradeitto es un punto de encuentro para coleccionistas, jugadores y familias. Aquí lo importante es la gente:
+            venir a intercambiar, jugar y conocer a otros fans de Pokémon.
           </p>
         </div>
         <div class="about-list">
@@ -150,18 +178,29 @@
             </div>
             <div>
               <h4>Intercambia</h4>
-              <p>Revisa cartas y haz trades con otros aficionados con calma y sin presión.</p>
+              <p>Mesas abiertas todo el día para revisar carpetas y cambiar cartas con calma.</p>
             </div>
           </div>
           <div class="about-item reveal">
             <div class="about-item-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="5 3 19 12 5 21 5 3"/>
+                <path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0V4z"/><path d="M17 5h3v2a3 3 0 01-3 3M7 5H4v2a3 3 0 003 3"/>
               </svg>
             </div>
             <div>
-              <h4>Juega</h4>
-              <p>Encuentra rivales y echa partidas durante toda la jornada. Todos los niveles son bienvenidos.</p>
+              <h4>Compite</h4>
+              <p>Torneo de Pokémon JCC con premios y solo 32 plazas.</p>
+            </div>
+          </div>
+          <div class="about-item reveal">
+            <div class="about-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Descubre</h4>
+              <p>Tiendas con producto sellado en español, internacional y asiático, y puestos de artesanía y merchandising.</p>
             </div>
           </div>
           <div class="about-item reveal">
@@ -172,7 +211,7 @@
             </div>
             <div>
               <h4>Conecta</h4>
-              <p>Conoce gente con tus mismos intereses en un ambiente relajado y sin pretensiones.</p>
+              <p>Sorteo en directo, concurso de preguntas y una gran apertura final para vivirlo todos juntos.</p>
             </div>
           </div>
         </div>
@@ -180,89 +219,120 @@
     </div>
   </section>
 
-  <!-- ══ QUÉ INCLUYE LA ENTRADA ══ -->
-  <section class="section section-alt" id="incluye">
+  <!-- ══ ENTRADAS ══ -->
+  <section class="section section-alt" id="entradas">
     <div class="container">
       <div class="includes-header">
         <div class="reveal">
           <div class="section-heading">
-            <p class="section-label">La entrada</p>
+            <p class="section-label">Entradas</p>
             <h2 class="section-title">Elige tu entrada.</h2>
           </div>
         </div>
       </div>
-      <div class="includes-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); max-width: 700px; margin: 0 auto;">
+      <div class="tickets-grid">
 
-        <div class="include-card reveal" style="border: 1px solid rgba(255,255,255,0.08);">
-          <div class="include-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/>
-            </svg>
-          </div>
+        <div class="include-card ticket reveal">
           <h3>General</h3>
-          <p style="font-size:2rem;font-weight:700;color:var(--accent);margin:8px 0 4px">12,50€</p>
-          <p>Acceso completo al evento, pack de bienvenida holográfico y número para el megasorteo en directo.</p>
+          <p class="ticket-price">12,50 €</p>
+          <ul class="ticket-list">
+            <li>Acceso al evento desde las 10:00</li>
+            <li>Participación en el megasorteo</li>
+            <li>Regalos de bienvenida</li>
+          </ul>
         </div>
 
-        <div class="include-card reveal" style="border: 1px solid rgba(201,168,48,0.35); background: rgba(201,168,48,0.05);">
-          <div class="include-card-icon" style="background: rgba(201,168,48,0.15);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#c9a830" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-            </svg>
-          </div>
-          <h3 style="color:#c9a830">VIP</h3>
-          <p style="font-size:2rem;font-weight:700;color:#c9a830;margin:8px 0 4px">25€</p>
-          <p>Todo lo de General + 1 sobre High Class japonés exclusivo.</p>
-          <p style="margin-top:10px;font-size:0.8rem;font-weight:700;letter-spacing:0.08em;color:#c9a830;text-transform:uppercase">⚠ Solo 20 entradas disponibles</p>
+        <div class="include-card ticket vip reveal">
+          <span class="ticket-tag" style="background:rgba(201,168,48,0.15);color:#9a7a10">1 h antes</span>
+          <h3>VIP</h3>
+          <p class="ticket-price">30 €</p>
+          <ul class="ticket-list">
+            <li>Acceso anticipado a las 9:00, una hora antes que nadie</li>
+            <li>Participación en el megasorteo</li>
+            <li>Regalos de bienvenida</li>
+          </ul>
+          <p class="ticket-limit">Solo 30 entradas</p>
+        </div>
+
+        <div class="include-card ticket torneo reveal">
+          <span class="ticket-tag" style="background:rgba(42,184,184,0.15);color:#1a8a8a">Con premios</span>
+          <h3>Torneo</h3>
+          <p class="ticket-price">25 €</p>
+          <ul class="ticket-list">
+            <li>Plaza en el torneo de Pokémon JCC</li>
+            <li>Acceso al evento</li>
+            <li>Participación en el megasorteo</li>
+            <li>Regalos de bienvenida</li>
+          </ul>
+          <p class="ticket-limit">Solo 32 plazas</p>
         </div>
 
       </div>
 
-      <div class="include-card reveal" style="max-width:700px;margin:24px auto 0;display:flex;align-items:flex-start;gap:20px;flex-direction:row;text-align:left;">
+      <div class="include-card extra-card reveal">
         <div class="include-card-icon" style="flex-shrink:0">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/>
           </svg>
         </div>
         <div>
-          <h3>Pack de bienvenida holográfico</h3>
-          <p style="margin-bottom:10px">Incluido con <strong>todas las entradas</strong>. Cada asistente recibe una bolsa holográfica con:</p>
-          <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:4px;font-size:0.9rem;color:var(--text-2)">
-            <li>✦ Pegatinas holográficas</li>
-            <li>✦ Tarjeta de bienvenida</li>
-            <li>✦ Tarjeta con el horario del evento</li>
-            <li>✦ Llavero exclusivo</li>
-            <li>✦ 1 sobre Pokémon</li>
+          <h3>Regalos de bienvenida</h3>
+          <p>Incluidos con <strong>todas las entradas</strong>. Al llegar, cada asistente recibe:</p>
+          <ul>
+            <li>✦ Bolsa personalizada de Tradeitto</li>
+            <li>✦ Gorro de Navidad de Tradeitto</li>
+            <li>✦ Turroncito de Navidad</li>
+            <li>✦ Folleto del evento</li>
           </ul>
         </div>
       </div>
 
-      <div class="include-card reveal" style="max-width:700px;margin:16px auto 0;display:flex;align-items:center;gap:20px;flex-direction:row;text-align:left;">
+      <div class="include-card extra-card reveal" style="margin-top:16px;align-items:center">
         <div class="include-card-icon" style="flex-shrink:0">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
           </svg>
         </div>
         <div>
-          <h3>Megasorteo en directo</h3>
-          <p>Incluido con todas las entradas. Se celebra en directo durante el evento — hay que estar presente para ganar.</p>
+          <h3>Megasorteo en directo · 12:00</h3>
+          <p>Incluido con todas las entradas. Sorteamos un megapack en directo durante el evento. Hay que estar presente para ganar.</p>
         </div>
       </div>
 
     </div>
   </section>
 
+  <!-- ══ PROGRAMA RESUMIDO ══ -->
+  <section class="section" id="programa">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-label">Programa</p>
+        <h2 class="section-title">Así será el día.</h2>
+      </div>
+      <div class="mini-prog">
+        <div class="mini-row reveal"><b>9:00</b><span>Entrada VIP<small>Una hora de acceso anticipado.</small></span></div>
+        <div class="mini-row reveal"><b>10:00</b><span>Entrada general<small>Se abre el evento para todos.</small></span></div>
+        <div class="mini-row reveal"><b>11:00</b><span>Empieza el torneo<small>32 jugadores compiten por los premios.</small></span></div>
+        <div class="mini-row reveal"><b>12:00</b><span>Megasorteo<small>Sorteo en directo de un megapack.</small></span></div>
+        <div class="mini-row reveal"><b>16:00</b><span>Concurso de preguntas<small>Si aciertas, te llevas un sobre.</small></span></div>
+        <div class="mini-row reveal"><b>17:00</b><span>La hora del intercambio<small>Patrocinada por Pokedoc.</small></span></div>
+        <div class="mini-row reveal"><b>18:00</b><span>Gran apertura final<small>Cerramos el día a lo grande.</small></span></div>
+      </div>
+      <p style="margin-top:28px"><a href="programa.html" class="btn-outline">Ver el programa completo</a></p>
+    </div>
+  </section>
+
   <!-- ══ QUIÉN ORGANIZA ══ -->
-  <section class="section" id="organizadores">
+  <section class="section section-alt" id="organizadores">
     <div class="container">
       <div class="reveal">
         <div class="section-heading">
           <p class="section-label">El equipo</p>
           <h2 class="section-title">Quién hay detrás.</h2>
         </div>
-        <p class="section-desc">Organizadores apasionados del TCG comprometidos con crear un evento de calidad para la comunidad de Bilbao y alrededores.</p>
+        <p class="section-desc">Tradeitto lo organizan dos creadores de contenido de referencia en el coleccionismo Pokémon.</p>
       </div>
-      <div class="organizers-grid">
+      <div class="organizers-grid" style="grid-template-columns:repeat(2,1fr);max-width:620px">
 
         <div class="organizer-card reveal">
           <div class="organizer-avatar">
@@ -280,22 +350,31 @@
           <p class="organizer-role">Organizador</p>
         </div>
 
-        <div class="organizer-card reveal">
-          <div class="organizer-avatar">
-            <img src="assets/logo-eeveecards.png" alt="Eeveecards" loading="lazy" />
-          </div>
-          <h3>Eeveecards</h3>
-          <p class="organizer-role">Organizador · Tienda</p>
-        </div>
+      </div>
 
+      <div class="reveal" style="margin-top:56px">
+        <div class="section-heading">
+          <p class="section-label">Patrocinadores</p>
+          <h2 class="section-title">Con el apoyo de</h2>
+        </div>
+      </div>
+      <div class="sponsors-grid">
+        <div class="include-card sponsor-card reveal">
+          <h3>Ryu Cards</h3>
+          <p class="organizer-role">Patrocinador</p>
+        </div>
+        <div class="include-card sponsor-card reveal">
+          <h3>Pokedoc</h3>
+          <p class="organizer-role">Patrocinador · La hora del intercambio</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ══ CTA FINAL ══ -->
-  <section class="cta-section" id="entradas">
+  <section class="cta-section">
     <div class="container">
-      <h2 class="cta-title reveal">Nos vemos el 7 de junio<br>en Bilbao.</h2>
+      <h2 class="cta-title reveal">Nos vemos el 19 de diciembre<br>en Bilbao.</h2>
       <p class="cta-sub reveal">Hazte con tu entrada antes de que se agoten. Las plazas son limitadas.</p>
       <a href="https://www.eventbrite.com/e/entradas-tradeitto-1987670163967" target="_blank" rel="noopener" class="btn-primary reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
@@ -312,15 +391,16 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
-        <a href="index.html" class="footer-logo">
+        <a href="sitio.html" class="footer-logo">
           <img src="assets/logo.png" alt="Tradeitto" />
         </a>
         <nav class="footer-links">
+          <a href="programa.html">Programa</a>
           <a href="faq.html">FAQ</a>
           <a href="https://instagram.com/tradeitto" target="_blank" rel="noopener">Instagram</a>
           <a href="https://www.eventbrite.com/e/entradas-tradeitto-1987670163967" target="_blank" rel="noopener">Entradas</a>
         </nav>
-        <p class="footer-copy">Tradeitto · Evento TCG en Bilbao · 2026</p>
+        <p class="footer-copy">Tradeitto · Evento Pokémon JCC en Bilbao · 2026</p>
       </div>
     </div>
   </footer>
