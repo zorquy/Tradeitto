@@ -34,7 +34,8 @@
     .mini-row small { display: block; font-weight: 400; color: var(--text-2); font-size: 0.85rem; }
     .sponsors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 620px; margin-top: 32px; }
     .sponsor-card { text-align: center; padding: 28px 20px; }
-    .sponsor-card h3 { font-size: 1.3rem; margin-bottom: 4px; }
+    .sponsor-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
+    .sponsor-logo { width: auto; height: 46px; max-width: 100%; margin: 4px auto 10px; }
     @media (max-width: 600px) { .extra-card { flex-direction: column; } .mini-row { grid-template-columns: 56px 1fr; padding: 12px 14px; } }
   </style>
 </head>
@@ -367,12 +368,12 @@
       </div>
       <div class="sponsors-grid">
         <a class="include-card sponsor-card reveal" href="https://www.ryucardstcg.com/" target="_blank" rel="sponsored noopener">
-          <h3>Ryu Cards</h3>
+          <img src="assets/logo-ryucards.png" alt="Ryu Cards" class="sponsor-logo" width="900" height="194" loading="lazy" />
           <p class="organizer-role">Patrocinador</p>
           <p style="font-size:0.85rem;color:var(--accent);margin-top:6px">ryucardstcg.com ↗</p>
         </a>
         <a class="include-card sponsor-card reveal" href="https://pokedoc.es/" target="_blank" rel="sponsored noopener">
-          <h3>Pokedoc</h3>
+          <img src="assets/logo-pokedoc.png" alt="Pokedoc" class="sponsor-logo" width="900" height="214" loading="lazy" />
           <p class="organizer-role">Patrocinador · La hora del intercambio</p>
           <p style="font-size:0.85rem;color:var(--accent);margin-top:6px">pokedoc.es ↗</p>
         </a>
